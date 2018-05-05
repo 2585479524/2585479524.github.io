@@ -1,0 +1,240 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="周宣锐">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>pat l3-015----球队&#34;食物链&#34;(dfs) - 无关--私人IT技术博客</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="算法刷题">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="锐">锐</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">周宣锐</h1>
+        <h3 class="cover-siteTitle">不跟风，不动摇</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-telegram">
+                <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+                    <i class="fa fa-telegram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-instagram">
+                <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-twitter">
+                <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/big-front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/serverSide" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/design" data-name="设计">设计</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="资源">资源</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="http://rebright.top" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">周宣锐</a>
+                    <span title="最后编辑于2018-05-04">2018-05-04</span>
+                </p>
+                <p>会前端的游戏开发者</p>
+            </div>
+            <h2 class="post-title">PAT L3-015----球队"食物链"(DFS)</h2>
+            <div class="post-meta">
+                本文总共3794个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>球队“食物链”<br>某国的足球联赛中有N支参赛球队，编号从1至N。联赛采用主客场双循环赛制，参赛球队两两之间在双方主场各赛一场。<br>联赛战罢，结果已经尘埃落定。此时，联赛主席突发奇想，希望从中找出一条包含所有球队的“食物链”，来说明联赛的精彩程度。“食物链”为一个1至N的排列{ T1，T2， …，TN }，满足：球队T1战胜过球队T2，球队T2战胜过球队T3，……，球队T(N-1)战胜过球队TN，球队TN战胜过球队T1。<br>现在主席请你从联赛结果中找出“食物链”。若存在多条“食物链”，请找出字典序最小的。<br>注：排列{ a1，a2，…，aN }在字典序上小于排列{ b1，b2， … ，bN }，当且仅当存在整数K（1 &lt;= K &lt;= N），满足：aK &lt; bK且对于任意小于K的正整数i，ai=bi。</p>
+<p>输入格式：<br>输入第一行给出一个整数N（2 &lt;= N &lt;= 20），为参赛球队数。随后N行，每行N个字符，给出了NxN的联赛结果表，其中第i行第j列的字符为球队i在主场对阵球队j的比赛结果：“W”表示球队i战胜球队j，“L”表示球队i负于球队j，“D”表示两队打平，“-”表示无效（当i=j时）。输入中无多余空格。</p>
+<p>输出格式：<br>按题目要求找到“食物链”T1，T2 ，…，TN，将这N个数依次输出在一行上，数字间以1个空格分隔，行的首尾不得有多余空格。若不存在“食物链”，输出“No Solution”。</p>
+<p>输入样例1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">-LWDW</span><br><span class="line">W-LDW</span><br><span class="line">WW-LW</span><br><span class="line">DWW-W</span><br><span class="line">DDLW-</span><br></pre></td></tr></table></figure></p>
+<p>输出样例1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 3 5 4 2</span><br></pre></td></tr></table></figure></p>
+<p>输入样例2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">-WDDW</span><br><span class="line">D-DWL</span><br><span class="line">DD-DW</span><br><span class="line">DDW-D</span><br><span class="line">DDDD-</span><br></pre></td></tr></table></figure></p>
+<p>输出样例2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">No Solution</span><br></pre></td></tr></table></figure></p>
+<p>学校去年举办的程序设计大赛，当时大一只做出来几个水题，后面的大题根本看不懂，时隔将近一年想回去试试能不能AC了那些题。。。。。。事实证明，还有些差距。下面将给出我的思路。</p>
+<p>无题解纯自己思考，看完题目想到了TSP问题，算法还算是给了我一定的思绪，我记得好像可与用dfs()解决。<br>但是做的过程中发现，输入的数据会发生一些问题，仔细排查后原来是由于nexLine()会读取上一个回车导致的，之前也遇到过，只是当时搞明白之后就没有再碰。<br>接下来就是自己手写dfs()，第一次尝试自己写，而看着模板，但是发现好几个点过不去，比如如何确定跳出时机，如何实现字典序输出，我在主函数写f(1)这不是只能是1开头了。很迷。下面的代码运行不出结果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">	static String[][] str;</span><br><span class="line">	static int n;</span><br><span class="line">	static int cnt = 0;</span><br><span class="line">	static boolean[][] vis;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Scanner in = new Scanner(System.in);</span><br><span class="line">		n = in.nextInt();</span><br><span class="line">		str = new String[n + 1][n + 1];</span><br><span class="line">		vis = new boolean[n + 1][n + 1];</span><br><span class="line">		/**</span><br><span class="line">		 * 注意nextLine()会读取上一个回车</span><br><span class="line">		 * */		</span><br><span class="line">		for (int i = 0; i &lt; n+1; i++) &#123;</span><br><span class="line">			String s = in.nextLine();</span><br><span class="line">			str[i] = s.split(&quot;&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">		f(1);</span><br><span class="line">//		for (int i = 1; i &lt; n+1; i++) &#123;</span><br><span class="line">//			for (int j = 1; j &lt; n+1; j++) &#123;</span><br><span class="line">//				System.out.print(str[i][j] + &quot; &quot;);</span><br><span class="line">//			&#125;</span><br><span class="line">//			System.out.println();</span><br><span class="line">//		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	private static void f(int m) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		if (cnt &gt; m) &#123;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		for (int i = 1; i &lt; n+1; i++) &#123;</span><br><span class="line">			for (int j = 1; j &lt; n+1; j++) &#123;</span><br><span class="line">				if (str[i][j].equals(&quot;W&quot;)) &#123;</span><br><span class="line">					vis[i][j] = true;</span><br><span class="line">					f(j);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>接下来看题解，一开始就发现自己做了一个非常繁琐的操作进行存储数据，而题解的做法是直接用boolean数组存，‘W’是true，‘L’是false，巧妙不少。结尾输出的方式也是巧妙，第一个不打印空格，之后都在打印之前加一个空格，可以巧妙的避免结尾的空格影响AC。<br>这道题跟单纯的TSP问题区别就在于TSP是对于无向赋权图来说找出最短的哈密顿回路，而这道题是对于有向无权图来说的（为什么是有向的，这是因为主客场制出现A在主场赢了B，A在客场也赢了B的情况）。当然剪枝之后效率会更好，但是蒟蒻的我还是不要把自己越搞越迷糊的好。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">	static boolean[][] a;</span><br><span class="line">	static int n;</span><br><span class="line">	static int cnt = 0;</span><br><span class="line">	static int flag = 0;</span><br><span class="line">	static int[] res;</span><br><span class="line">	static boolean[] vis;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Scanner in = new Scanner(System.in);</span><br><span class="line">		n = in.nextInt();</span><br><span class="line">		a = new boolean[n + 1][n + 1];</span><br><span class="line">		vis = new boolean[n + 1];</span><br><span class="line">		res = new int[n + 1];</span><br><span class="line">		/**</span><br><span class="line">		 * 注意nextLine()会读取上一个回车</span><br><span class="line">		 * */		</span><br><span class="line">		for (int i = 0; i &lt;= n; i++) &#123;</span><br><span class="line">			String s = in.nextLine();</span><br><span class="line">			for (int j = 0; j &lt; s.length(); j++) &#123;</span><br><span class="line">				if (s.charAt(j) == &apos;W&apos;) &#123;</span><br><span class="line">					a[i][j+1] = true;</span><br><span class="line">				&#125; </span><br><span class="line">				if (s.charAt(j) == &apos;L&apos;)&#123;</span><br><span class="line">					a[j+1][i] = true;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">		f(1, 1);</span><br><span class="line">		if (flag == 1) &#123;</span><br><span class="line">			for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">				System.out.print(i == 1 ? &quot;&quot; : &quot; &quot;);</span><br><span class="line">				System.out.print(res[i]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			System.out.println(&quot;No Solution&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	private static void f(int cur, int num) &#123;</span><br><span class="line">		if (flag == 1) &#123;</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		res[cur] = num;</span><br><span class="line">		if (cur == n &amp;&amp; a[num][1] == true) &#123;</span><br><span class="line">			flag = 1;</span><br><span class="line">			return;</span><br><span class="line">		&#125;</span><br><span class="line">		if (cur == n) &#123;</span><br><span class="line">			return; </span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		vis[num] = true;</span><br><span class="line">		for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">			if (vis[i] == false &amp;&amp; a[num][i] == true) &#123;</span><br><span class="line">				f(cur + 1, i);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		vis[num] = false;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/serverSide/">后端</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>文章为原创作品，转发请留言</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2018 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '05/2/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

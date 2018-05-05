@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="周宣锐">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>ubuntu(以18lts为例)使用shadowsocks设置代理服务器 - 无关--私人IT技术博客</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="Ubuntu初探">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="锐">锐</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">周宣锐</h1>
+        <h3 class="cover-siteTitle">不跟风，不动摇</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-telegram">
+                <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+                    <i class="fa fa-telegram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-instagram">
+                <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-twitter">
+                <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/big-front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/serverSide" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/design" data-name="设计">设计</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/resource" data-name="资源">资源</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="http://rebright.top" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">周宣锐</a>
+                    <span title="最后编辑于2018-05-04">2018-05-04</span>
+                </p>
+                <p>会前端的游戏开发者</p>
+            </div>
+            <h2 class="post-title">Ubuntu(以18LTS为例)使用shadowsocks设置代理服务器</h2>
+            <div class="post-meta">
+                本文总共2020个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="安装shadowsocks"><a href="#安装shadowsocks" class="headerlink" title="安装shadowsocks"></a>安装shadowsocks</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install shadowscks</span><br></pre></td></tr></table></figure>
+<p><strong>查看shadowsocks是否安装成功</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sslocal --version</span><br></pre></td></tr></table></figure>
+<p><strong>配置shadowsocks</strong><br>在/home/用户名/ 下新建shadowsocks.json文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;server&quot;: &quot;外网IP地址&quot;,</span><br><span class="line"></span><br><span class="line">&quot;server_port&quot;: 50003,</span><br><span class="line"></span><br><span class="line">&quot;local_port&quot;: 1080,</span><br><span class="line"></span><br><span class="line">&quot;password&quot;: &quot;登陆密码&quot;,</span><br><span class="line"></span><br><span class="line">&quot;timeout&quot;: 600,</span><br><span class="line"></span><br><span class="line">&quot;method&quot;: &quot;aes-256-cfb&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>server  外网服务器IP<br>servier_port  服务器端口<br>local_port  本地端口，默认1080<br>passwd  服务端密码<br>timeout  超时设置<br>method  加密方法<br>使用<strong>sslocal -c /home/用户名/shadowsocks.json</strong>命令<br>终端会开启服务，但是不能关闭该终端，如需执行其他命令需要另开终端</p>
+<hr>
+<p>我们不能每次上网之前都输入sslocal  -c /home/mudao/shadowsocks.json，显然我们将其设置为开机自启。</p>
+<p>#开机自启</p>
+<p>我们都知道服务可以开机自启，但是进程不可以。这里我们需要借助<strong>supervisor</strong>来管理sslocal。<br><strong>安装supervisor</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install supervisor</span><br></pre></td></tr></table></figure></p>
+<p><strong>配置supervisor</strong><br>安装之后会在/etc/supervisor/下生成配置文件supervisor.conf<br>在文件最后添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[program:shadowsocks]</span><br><span class="line"></span><br><span class="line">command=sslocal -c /home/用户名/shadowsocks.json</span><br><span class="line"></span><br><span class="line">autostart=true</span><br><span class="line"></span><br><span class="line">autorestart=true</span><br><span class="line"></span><br><span class="line">user=root</span><br><span class="line"></span><br><span class="line">log_stderr=true</span><br><span class="line"></span><br><span class="line">logfile=/var/log/shadowsocks.log</span><br></pre></td></tr></table></figure>
+<p>如果没有生成那么我们可以自己生成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo su #切换到root</span><br><span class="line">echo_supervisord_conf &gt; /etc/supervisor/supervisord.conf</span><br></pre></td></tr></table></figure>
+<p>在最后添加上面的配置即可<br>输入supervisord以启动supervisor</p>
+<p><strong>修改命令位置</strong><br>由于sslocal和sserver两个命令位于/usr/bin（16以上的版本），所以我们还要执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /usr/bin/sslocal /bin</span><br></pre></td></tr></table></figure>
+<p>关闭刚才打开的sslocal终端，访问<a href="https://google.com" target="_blank" rel="noopener">https://google.com</a><br>或者使用命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep sslocal</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/2018/ubuntuShadowsocks/1.png" alt="这里写图片描述"><br>两行结果说明没有问题</p>
+<p>现在进程可以统一交给supervisor处理了，我们只需开机自启supervisor就可以了。</p>
+<p><strong>设置supervisor开机自启</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/rc.local</span><br></pre></td></tr></table></figure></p>
+<p>不用管有没有这个文件，直接创建编辑即可，输入下面的配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service supervisor start </span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
+<p><strong>重启后查看服务</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service --status-all</span><br></pre></td></tr></table></figure></p>
+<p>出现[+]shadowsocks和[+]supervisor即说明配置成功</p>
+<hr>
+<p>我们配置好的代理服务一般是全局的，也就是说无论是访问国内的网站还是国外的网站都会通过代理，这虽然解决了我们科学上网的问题，但所对于国内的网站我们再通过代理反而麻烦了，而且浪费服务器流浪，所以我们要设置浏览器能够自动切换。</p>
+<h2 id="配置浏览器"><a href="#配置浏览器" class="headerlink" title="配置浏览器"></a>配置浏览器</h2><p><strong>安装插件</strong><br>为Chrome安装SwitchyOmega插件，我们可以通过github地址<a href="https://github.com/FelisCatus/SwitchyOmega/releases/" target="_blank" rel="noopener">SwitchyOmega 2.5.10 for Chromium &amp; Firefox</a>进行安装<br><img src="/img/2018/ubuntuShadowsocks/2.png" alt="这里写图片描述"><br>其中.xpi文件是火狐浏览器的插件，.crx文件是谷歌浏览器的插件<br>然后打开chrome://extensions/直接拖入即可安装插件<br><strong>设置代理服务</strong><br><img src="/img/2018/ubuntuShadowsocks/3.png" alt="这里写图片描述"><br>点击左侧情景模式中的新建情景模式，命名随意，确定之后设置代理协议SOCKS5，代理服务器127.0.0.1，代理端口1080保存</p>
+<p><strong>点击情景模式中的auto switch</strong><br><img src="/img/2018/ubuntuShadowsocks/4.png" alt="这里写图片描述"><br>在<strong>安装规则列表匹配请求</strong>之后选择新创建的情景模式，默认情景模式选择直接相连。<br>规则列表设置选择AutoProxy，填入<a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</a>, 点击立即更新情景模式。<br>之后你会发现访问国内网站SwitchyOmega插件图标如下<br><img src="/img/2018/ubuntuShadowsocks/5.png" alt="这里写图片描述"><br>国外网站SwitchyOmega插件图标如下<br><img src="/img/2018/ubuntuShadowsocks/6.png" alt="这里写图片描述"></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/资源/">资源</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>文章为原创作品，转发请留言</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2018 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '05/2/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

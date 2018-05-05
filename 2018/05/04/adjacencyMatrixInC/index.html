@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="周宣锐">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>图的邻接矩阵（c语言） - 无关--私人IT技术博客</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="数据结构与算法--C语言">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="锐">锐</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">周宣锐</h1>
+        <h3 class="cover-siteTitle">不跟风，不动摇</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-telegram">
+                <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+                    <i class="fa fa-telegram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-instagram">
+                <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-twitter">
+                <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/big-front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/serverSide" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/design" data-name="设计">设计</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="资源">资源</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="http://rebright.top" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">周宣锐</a>
+                    <span title="最后编辑于2018-05-04">2018-05-04</span>
+                </p>
+                <p>会前端的游戏开发者</p>
+            </div>
+            <h2 class="post-title">图的邻接矩阵（C语言）</h2>
+            <div class="post-meta">
+                本文总共3870个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h2><p><img src="/img/2018/adjacencyMatrixInC/1.png" alt="邻接矩阵概念"><br>无向图和有向图在邻接矩阵中的表示方法：<br><img src="/img/2018/adjacencyMatrixInC/2.png" alt="有向图和无向图的表示方法"></p>
+<p><strong>无向图和有向图大同小异，在这里只以无向图为例，代码部分通过简单调整即可对应编译有向图</strong></p>
+<p>邻接矩阵数据类型定义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#define MaxVertices 100 //定义最大容量</span><br><span class="line">typedef struct&#123; //包含权的邻接矩阵的的定义</span><br><span class="line">	int Vertices[MaxVertices];  //顶点信息的数组</span><br><span class="line">	int Edge[MaxVertices][MaxVertices]; //边信息的数组</span><br><span class="line">	int numV; //顶点数</span><br><span class="line">	int numE; //边数</span><br><span class="line">&#125;AdjMatrix;</span><br></pre></td></tr></table></figure></p>
+<p>以如关系图为例<br><img src="/img/2018/adjacencyMatrixInC/3.png" alt="邻接矩阵关系图"><br>根据上图，我们可以写出对应的邻接矩阵：<br><img src="/img/2018/adjacencyMatrixInC/4.png" alt="邻接矩阵手写"><br>通过这个图可以看出，无向图对角线划分出来的两部分是<strong>互相对称</strong>的，由此即可通过创建无向图的邻接矩阵：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">void CreateGraph(AdjMatrix *G) //图的生成函数</span><br><span class="line">&#123; </span><br><span class="line">	int n,e,vi,vj,w,i,j;</span><br><span class="line">	printf(&quot;请输入图的顶点数和边数（以空格分隔）：&quot;);</span><br><span class="line">	scanf(&quot;%d%d&quot;,&amp;n,&amp;e);</span><br><span class="line">	G-&gt;numV=n;G-&gt;numE=e;</span><br><span class="line">	for(i=0;i&lt;n;i++) //图的初始化</span><br><span class="line">		for(j=0;j&lt;n;j++)</span><br><span class="line">			&#123; </span><br><span class="line">			if(i==j)</span><br><span class="line">				G-&gt;Edge[i][j]=0;</span><br><span class="line">			else </span><br><span class="line">				G-&gt;Edge[i][j]=32767;</span><br><span class="line">			&#125;</span><br><span class="line">	for(i=0;i&lt;n;i++)</span><br><span class="line">		for(i=0;i&lt;G-&gt;numV;i++) //将顶点存入数组中</span><br><span class="line">		&#123; </span><br><span class="line">		printf(&quot;请输入第%d个顶点的信息:&quot;,i+1);</span><br><span class="line">		scanf(&quot;%d&quot;,&amp;G-&gt;Vertices[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line"></span><br><span class="line">	for(i=0;i&lt;G-&gt;numE;i++)</span><br><span class="line">	&#123; </span><br><span class="line">		printf(&quot;请输入边的信息i,j,w(以空格分隔):&quot;);</span><br><span class="line">		scanf(&quot;%d%d%d&quot;,&amp;vi,&amp;vj,&amp;w); </span><br><span class="line">		//若为不带权值的图，则w输入1</span><br><span class="line">		//若为带权值的图，则w输入对应权值</span><br><span class="line">	</span><br><span class="line">		G-&gt;Edge[vi-1][vj-1]=w;//①</span><br><span class="line">		G-&gt;Edge[vj-1][vi-1]=w;//②</span><br><span class="line">		//无向图具有对称性的规律，通过①②实现</span><br><span class="line">		//有向图不具备此性质，所以只需要①</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建完无向图对应的邻接矩阵，我们需要对输出的格式进行一下控制，使其尽量按照普通手写的方式输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">void DispGraph(AdjMatrix G) //输出邻接矩阵的信息</span><br><span class="line">&#123; </span><br><span class="line">	int i,j;</span><br><span class="line">	printf(&quot;\n输出顶点的信息（整型）:\n&quot;);</span><br><span class="line">	for(i=0;i&lt;G.numV;i++)</span><br><span class="line">		printf(&quot;%8d&quot;,G.Vertices[i]);</span><br><span class="line">		</span><br><span class="line">	printf(&quot;\n输出邻接矩阵:\n&quot;);</span><br><span class="line">	printf(&quot;\t&quot;);</span><br><span class="line">	for(i=0;i&lt;G.numV;i++)</span><br><span class="line">		printf(&quot;%8d&quot;,G.Vertices[i]);</span><br><span class="line">			</span><br><span class="line">	for(i=0;i&lt;G.numV;i++)</span><br><span class="line">	&#123; </span><br><span class="line">		printf(&quot;\n%8d&quot;,i+1);</span><br><span class="line">		for(j=0;j&lt;G.numV;j++)</span><br><span class="line">		&#123; </span><br><span class="line">		if(G.Edge[i][j]==32767) //两点之间无连接时权值为默认的32767，但输出时为了方便输出 &quot;∞&quot;</span><br><span class="line">			printf(&quot;%8s&quot;, &quot;∞&quot;);</span><br><span class="line">		else</span><br><span class="line">			printf(&quot;%8d&quot;,G.Edge[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">		printf(&quot;\n&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>完整程序如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">#define MaxVertices 100 //假设包含100个顶点</span><br><span class="line">#define MaxWeight 32767 //不邻接时为32767，但输出时用 &quot;∞&quot;</span><br><span class="line">typedef struct&#123; //包含权的邻接矩阵的的定义</span><br><span class="line">	int Vertices[MaxVertices];  //顶点信息的数组</span><br><span class="line">	int Edge[MaxVertices][MaxVertices]; //边的权信息的数组</span><br><span class="line">	int numV; //当前的顶点数</span><br><span class="line">	int numE; //当前的边数</span><br><span class="line">&#125;AdjMatrix;</span><br><span class="line"></span><br><span class="line">void CreateGraph(AdjMatrix *G) //图的生成函数</span><br><span class="line">&#123; </span><br><span class="line">	int n,e,vi,vj,w,i,j;</span><br><span class="line">	printf(&quot;请输入图的顶点数和边数（以空格分隔）：&quot;);</span><br><span class="line">	scanf(&quot;%d%d&quot;,&amp;n,&amp;e);</span><br><span class="line">	G-&gt;numV=n;G-&gt;numE=e;</span><br><span class="line">	for(i=0;i&lt;n;i++) //图的初始化</span><br><span class="line">		for(j=0;j&lt;n;j++)</span><br><span class="line">			&#123; </span><br><span class="line">			if(i==j)</span><br><span class="line">				G-&gt;Edge[i][j]=0;</span><br><span class="line">			else </span><br><span class="line">				G-&gt;Edge[i][j]=32767;</span><br><span class="line">			&#125;</span><br><span class="line">	for(i=0;i&lt;n;i++)</span><br><span class="line">		for(i=0;i&lt;G-&gt;numV;i++) //将顶点存入数组中</span><br><span class="line">		&#123; </span><br><span class="line">		printf(&quot;请输入第%d个顶点的信息(整型):&quot;,i+1);</span><br><span class="line">		scanf(&quot;%d&quot;,&amp;G-&gt;Vertices[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	printf(&quot;\n&quot;);</span><br><span class="line"></span><br><span class="line">	for(i=0;i&lt;G-&gt;numE;i++)</span><br><span class="line">	&#123; </span><br><span class="line">		printf(&quot;请输入边的信息i,j,w(以空格分隔):&quot;);</span><br><span class="line">		scanf(&quot;%d%d%d&quot;,&amp;vi,&amp;vj,&amp;w); </span><br><span class="line">		//若为不带权值的图，则w输入1</span><br><span class="line">		//若为带权值的图，则w输入对应权值</span><br><span class="line">	</span><br><span class="line">		G-&gt;Edge[vi-1][vj-1]=w;//①</span><br><span class="line">		G-&gt;Edge[vj-1][vi-1]=w;//②</span><br><span class="line">		//无向图具有对称性的规律，通过①②实现</span><br><span class="line">		//有向图不具备此性质，所以只需要①</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">void DispGraph(AdjMatrix G) //输出邻接矩阵的信息</span><br><span class="line">&#123; </span><br><span class="line">	int i,j;</span><br><span class="line">	printf(&quot;\n输出顶点的信息（整型）:\n&quot;);</span><br><span class="line">	for(i=0;i&lt;G.numV;i++)</span><br><span class="line">		printf(&quot;%8d&quot;,G.Vertices[i]);</span><br><span class="line">		</span><br><span class="line">	printf(&quot;\n输出邻接矩阵:\n&quot;);</span><br><span class="line">	printf(&quot;\t&quot;);</span><br><span class="line">	for(i=0;i&lt;G.numV;i++)</span><br><span class="line">		printf(&quot;%8d&quot;,G.Vertices[i]);</span><br><span class="line">			</span><br><span class="line">	for(i=0;i&lt;G.numV;i++)</span><br><span class="line">	&#123; </span><br><span class="line">		printf(&quot;\n%8d&quot;,i+1);</span><br><span class="line">		for(j=0;j&lt;G.numV;j++)</span><br><span class="line">		&#123; </span><br><span class="line">		if(G.Edge[i][j]==32767) </span><br><span class="line">		//两点之间无连接时权值为默认的32767，</span><br><span class="line">		在无向图中一般用&quot;0&quot;表示，在有向图中一般用&quot;∞&quot;,</span><br><span class="line">		这里为了方便统一输出 &quot;∞&quot;</span><br><span class="line">			printf(&quot;%8s&quot;, &quot;∞&quot;);</span><br><span class="line">		else</span><br><span class="line">			printf(&quot;%8d&quot;,G.Edge[i][j]);</span><br><span class="line">		&#125;</span><br><span class="line">		printf(&quot;\n&quot;);	</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123; </span><br><span class="line">	AdjMatrix G;</span><br><span class="line">	CreateGraph(&amp;G);</span><br><span class="line">	DispGraph(G);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：<br><img src="/img/2018/adjacencyMatrixInC/5.png" alt="这里写图片描述"></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/serverSide/">后端</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>文章为原创作品，转发请留言</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2018 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '05/2/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="周宣锐">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>最大子列和问题（java） - 无关--私人IT技术博客</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="数据结构与算法--JAVA">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="锐">锐</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">周宣锐</h1>
+        <h3 class="cover-siteTitle">不跟风，不动摇</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-telegram">
+                <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+                    <i class="fa fa-telegram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-instagram">
+                <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-twitter">
+                <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/big-front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/serverSide" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/design" data-name="设计">设计</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="资源">资源</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="http://rebright.top" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">周宣锐</a>
+                    <span title="最后编辑于2018-05-04">2018-05-04</span>
+                </p>
+                <p>会前端的游戏开发者</p>
+            </div>
+            <h2 class="post-title">最大子列和问题（JAVA）</h2>
+            <div class="post-meta">
+                本文总共4879个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h1 id="最大子列和"><a href="#最大子列和" class="headerlink" title="最大子列和"></a>最大子列和</h1><p>问题描述：给定N个整数的序列{A1，A2，A3，……，An}，求解子列和中最大的值。</p>
+<p>这里我们给出{-2，11，-4，13，-5，-2}这样一个序列，正确的最大子列和为20</p>
+<p>该题是在数据结构与算法中经常用于分析时间复杂度的典型题目，以下将给出四种方法来求解</p>
+<hr>
+<h2 id="一、三层循环——穷举法"><a href="#一、三层循环——穷举法" class="headerlink" title="一、三层循环——穷举法"></a>一、三层循环——穷举法</h2><p>（时间复杂度O(N^3)）<br>这种方法的思路就是将每一个子列和都求出来，然后找出最大子列和</p>
+<p><img src="/img/2018/maximumSubsequenceInJava/1.png" alt="法1示例"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public static int maxSubSum1(int[] arr)&#123;</span><br><span class="line">        //设置整体最大值</span><br><span class="line">        int maxSum = 0;</span><br><span class="line">        //穷举法遍历</span><br><span class="line">        //循环大小：N</span><br><span class="line">        for( int i = 0;i&lt;arr.length;i++ )&#123;</span><br><span class="line">            //循环大小：N-i</span><br><span class="line">            for(int j = i;j&lt;arr.length;j++)&#123;</span><br><span class="line">                //设置当前最大值</span><br><span class="line">                int thisSum = 0;</span><br><span class="line">                //求解arr[i]~arr[j]的最大值</span><br><span class="line">                //循环大小：j-i+1</span><br><span class="line">                for(int k = i;k&lt;=j;k++)&#123;</span><br><span class="line">                    thisSum += arr[k];</span><br><span class="line">                &#125;</span><br><span class="line">                //更新最大值</span><br><span class="line">                if(thisSum &gt; maxSum)&#123;</span><br><span class="line">                    maxSum = thisSum;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return maxSum;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>这种做法包含了三个循环，第一个循环的大小为N，第二个循环的大小为N-i，第三个循环的大小为j-i+1，根据时间复杂度的计算方法我们这里都可以看成N，所以时间复杂度为O(n^3)</p>
+<h2 id="二、两层循环——穷举法优化"><a href="#二、两层循环——穷举法优化" class="headerlink" title="二、两层循环——穷举法优化"></a>二、两层循环——穷举法优化</h2><p>（时间复杂度O(N^2)）</p>
+<p>这种算法是对以一种情况的优化，但是仍然属于穷举法，示例图和第一种方法一样，这里不再重复给出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public static int maxSubSum2(int[] arr)&#123;</span><br><span class="line">    //设置整体最大值</span><br><span class="line">    int maxSum = 0;</span><br><span class="line">    //穷举法遍历</span><br><span class="line">    //循环大小N</span><br><span class="line">    for(int i = 0;i &lt; arr.length;i++)&#123;</span><br><span class="line">        int thisSum = 0;</span><br><span class="line">        //循环大小N-i</span><br><span class="line">        for(int j = i;j&lt;arr.length;j++)&#123;</span><br><span class="line">            //直接进行累加，改进不必要的第三重循环</span><br><span class="line">            thisSum += arr[j];</span><br><span class="line"></span><br><span class="line">            if( thisSum &gt; maxSum )&#123;</span><br><span class="line">                maxSum = thisSum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>观察第一种方法我们可以发现，第三层循环虽然尽可能优的列出了所有的情况，但是这种做法是可以进行优化的，按照问题描述，如果我们去除第三重循环，仍然可以实现穷举所有的情况，算法的时间复杂度变为O(n^2)</p>
+<h2 id="三、分治思想——递归法"><a href="#三、分治思想——递归法" class="headerlink" title="三、分治思想——递归法"></a>三、分治思想——递归法</h2><p>（时间复杂度O(N·logN)）</p>
+<p>分治思想（divide-and-conquer）的基本思路是：把问题分成两个大致相等的子问题，然后递归地对它们求解，这是“分”的思想；“治”阶段将两个子问题的解修补到一起并可能再做些少许的附加工作，最后得到整个问题的解。</p>
+<p>通过这种思想，最大子列和有可能出现在三个地方，左半段、右半段、交界处。<br>前两种情况可以通过递归求解，而第三种情况需要求出左半段带边界（即含有最后一个元素）的最大和以及右半段带边界（即含有第一个元素）的最大和而得到。</p>
+<p>本题中，将序列从中间分开，分别求两部分的最大值。由此可见左边最大的为11，右边最大的为13，而交界处最大和需要通过左半段带边界的最大和，与右半段带边界的最大和，求和。（此处不易理解，读者可以根据图示中的绿色部分辅助理解，图中的绿色部分就是符合交界处序列和的值，左边最大值为7，右边最大值为13，和为20），综上比较，该序列的最大序列和为20</p>
+<p><img src="/img/2018/maximumSubsequenceInJava/2.png" alt="法3示例"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">public static int maxSubSum3(int[] arr)&#123;</span><br><span class="line">    //将数组arr，数组的下限0，数组的上限arr.length-1传入递归函数</span><br><span class="line">    return maxSubSumRec(arr,0,arr.length-1);</span><br><span class="line">&#125;</span><br><span class="line">//递归函数</span><br><span class="line">private static int maxSubSumRec(int[] arr,int left,int right)&#123;</span><br><span class="line">    //当 left==right 时说明只有一个元素，并且当该元素非负时就是他的最大子序列</span><br><span class="line">    if(left == right)&#123;</span><br><span class="line">        if(arr[left] &gt; 0)&#123;</span><br><span class="line">            return arr[left];</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //递归定义部分</span><br><span class="line">    int center = ( left + right) / 2;</span><br><span class="line">    int maxLeftSum = maxSubSumRec(arr,left,center);</span><br><span class="line">    int maxRightSum = maxSubSumRec(arr,center+1,right);</span><br><span class="line"></span><br><span class="line">    //递归实现部分</span><br><span class="line">    int maxLeftBorderSum = 0;</span><br><span class="line">    int leftBorderSum = 0;</span><br><span class="line">    for(int i = center;i&gt;=left;i--)&#123;</span><br><span class="line">        leftBorderSum += arr[i];</span><br><span class="line">        if(leftBorderSum &gt; maxLeftBorderSum)&#123;</span><br><span class="line">            maxLeftBorderSum = leftBorderSum;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int maxRightBorderSum = 0;</span><br><span class="line">    int rightBorderSum = 0;</span><br><span class="line">    for(int i = center + 1;i&lt;=right;i++)&#123;</span><br><span class="line">        rightBorderSum += arr[i];</span><br><span class="line">        if(rightBorderSum &gt; maxRightBorderSum)&#123;</span><br><span class="line">            maxRightBorderSum = rightBorderSum;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    //判断三者大小</span><br><span class="line">    return max3(maxLeftSum,maxRightSum,maxLeftBorderSum + maxRightBorderSum);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//比较函数</span><br><span class="line">public static int max3(int a,int b,int c)&#123;</span><br><span class="line">    int max;</span><br><span class="line">    if(a&gt;b)&#123;</span><br><span class="line">        max = a;</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        max = b;</span><br><span class="line">    &#125;</span><br><span class="line">    if(max&gt;c)&#123;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        return c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注：我们需要保存的不仅是左右两侧的最大序列和，还需要得到左右两侧带边界的最大序列和，这也就是为什么左侧循环从center往前遍历，而右侧循环从center+1往后遍历的原因，此顺序不可颠倒</p>
+<p>这种方法乍看写了三个函数，实现该算法也需要更多的编程努力，但实际上程序代码量的多少与程序的效率根本并没有什么必然的联系。</p>
+<p>该算法的时间复杂度为时间复杂度O(N·logN)，效率明显高于前两种</p>
+<h2 id="四、一层循环——累计遍历法"><a href="#四、一层循环——累计遍历法" class="headerlink" title="四、一层循环——累计遍历法"></a>四、一层循环——累计遍历法</h2><p>（时间复杂度O(N)）</p>
+<p>这种方法，将循环减为一层，每次累加，并判断当前最大值（thisSum）与标准最大值（maxSum）的关系。</p>
+<p><img src="/img/2018/maximumSubsequenceInJava/3.png" alt="法4示例"></p>
+<p>虽然整体只进行了一趟循环，但是便于理解，在这里分成了6部分，每次更新thisSum的值并与maxSum比较。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public static int maxSubSum4(int[] arr)&#123;</span><br><span class="line">    int maxSum = 0;</span><br><span class="line">    int thisSum = 0;</span><br><span class="line"></span><br><span class="line">        for(int j = 0;j&lt;arr.length;j++)&#123;</span><br><span class="line">        thisSum += arr[j];</span><br><span class="line"></span><br><span class="line">        if(thisSum &gt; maxSum)&#123;</span><br><span class="line">            maxSum = thisSum;</span><br><span class="line">        &#125;else if(thisSum &lt; 0)&#123;</span><br><span class="line">            thisSum = 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return  maxSum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种算法的效率是非常明显的，时间复杂度为O(N)，这种方法可以算是近乎完美的一种求解最大子列和的算法。根据总结：任何负的子序列都不可能是最有子序列的前缀，所以我们可以知道，只要是首位元素为负数的肯定不是最大子列的组成部分。即如果某个子列的首位为负数，那么它一定要借助后面的非负数改进。<br>而且这种算法还有一种优点就是，它只对数据扫描一次，在任何时刻，算法都可以对它已经读入的数据给出正确的答案（具备这种特性的算法叫做联机算法）</p>
+<hr>
+<p>下面是四种算法的在不同N情况下的时间复杂度情况：<br><img src="/img/2018/maximumSubsequenceInJava/4.png" alt="算法时间复杂度"><br>通过观察我们可以发现，在小量输入的情况下，几种算法的复杂度基本上都是眨眼之间能够完成的。但是在大量数据的情况下，我们可以看出，后两中算法仍然是能够在短时间内高效的完成同一件事，而前两种却显得异常乏力。</p>
+<hr>
+<hr>
+<p>题外话：之前在暑假期间，利用C语言，完成了基本的数据结构算法博客的书写，虽然短时间内能够记住相关的算法，但是几个月来不经常接触，导致水平仍是停滞不前。鉴于现正在自学java，所以我将通过java来继续学习数据结构与算法这方面的知识。一方面可以通过撰文的形式加深记忆，另一方面，由于下学期学校会组织参加ACM大赛、数学建模大赛等比赛，一定要抽出足够的时间来学习算法。</p>
+<p>才疏学浅，尚有诸多不懂之处，文章多有疏漏，还望前辈斧正。</p>
+<p>本系列专栏所有的算法均参考<a href="http://product.dangdang.com/23918741.html" target="_blank" rel="noopener">Mark Allen Weiss先生的《数据结构与算法分析–Java语言描述》第三版</a>。</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/serverSide/">后端</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>文章为原创作品，转发请留言</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2018 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '05/2/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

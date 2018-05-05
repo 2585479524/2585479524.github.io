@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="周宣锐">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>php实现多文件上传 - 无关--私人IT技术博客</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="php是世界上最好的语言">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="锐">锐</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">周宣锐</h1>
+        <h3 class="cover-siteTitle">不跟风，不动摇</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-telegram">
+                <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+                    <i class="fa fa-telegram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-instagram">
+                <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-twitter">
+                <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/big-front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/serverSide" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/design" data-name="设计">设计</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="资源">资源</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="http://rebright.top" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">周宣锐</a>
+                    <span title="最后编辑于2018-05-03">2018-05-03</span>
+                </p>
+                <p>会前端的游戏开发者</p>
+            </div>
+            <h2 class="post-title">PHP实现多文件上传</h2>
+            <div class="post-meta">
+                本文总共4019个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="PHP文件上传流程"><a href="#PHP文件上传流程" class="headerlink" title="PHP文件上传流程"></a>PHP文件上传流程</h2><ol>
+<li>单击提交按钮，浏览器用户将包含上传文件的表单数据提交给PHP处理程序</li>
+<li>Web服务器和PHP预处理器首先判断表单数据的大小是否超过php.ini配置文件中的<strong>post_max_size</strong>选项设置的上限值。<br> 若超过，PHP处理程序将无法得到任何表单数据，此时不仅上传文件失败，而且表单控件中填写的数据也会提交失败，也就是说：PHP处理程序预定义变量$_GET、$_POST、$_FILES将为空数组。<br> 若没有超过，文件上传进入第3步检验。</li>
+<li>检验表单中的文件大小是否超过表单隐藏域<strong>MAX_FILE_SIZE</strong>设置的上限值。<br> 若超过，PHP预处理器返回状态码2，文件上传失败。<br> 若没有超过，文件上传进入第4步检验。<br> (当有多个文件进行上传时，某个文件上传框导致的文件上传失败，不会影响其他文件上传框的上传结果)</li>
+<li>检验表单中的文件是否超过php.ini配置文件中<strong>upload_max_filesize</strong>选项设置的上限值。<br> 若超过，PHP预处理器返回状态码1，文件上传失败。<br> 若没有超过，文件上传进入第5步检验。</li>
+<li>PHP实现上传文件需要在php.ini配置文件upload_tmp_dir选项定义的目录中创建一个与上传文件一一对应的临时文件（默认拓展名为tmp），上传成功后，临时文件立即消失，此时PHP预处理器的返回状态码0。<br> 但是有时由于默写原因(如max_execution_time选项设置过小或者网速慢等原因)，上传部分文件后不再继续上传剩余文件，导致文件上传失败，此时PHP预处理器返回状态码3<br> 若通过，文件上传进入第6步检验。</li>
+<li>实现文件上传的关键一步在于在临时文件消失前，需要将临时文件保存到Web服务器或文件服务器。PHP提供的两个函数：<strong>is_uploaded_file()</strong>函数和<strong>move_uploaded_file()</strong>函数，可以帮助完成这一步的工作</li>
+</ol>
+<hr>
+<p>多个文件上传要注意的就是相同的name保存的文件内容是按照下面的形式放在数组中的。是五个数组，按照文件的五个参数分别存放的，并非三个数组。所以如果直接使用count(\$_FILES[‘$myPicture’])，答案为5。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">array (size=5)</span><br><span class="line">  &apos;name&apos; =&gt; </span><br><span class="line">    array (size=3)</span><br><span class="line">      0 =&gt; string &apos;1.txt&apos; (length=5)</span><br><span class="line">      1 =&gt; string &apos;2.txt&apos; (length=5)</span><br><span class="line">      2 =&gt; string &apos;3.txt&apos; (length=5)</span><br><span class="line">  &apos;type&apos; =&gt; </span><br><span class="line">    array (size=3)</span><br><span class="line">      0 =&gt; string &apos;text/plain&apos; (length=10)</span><br><span class="line">      1 =&gt; string &apos;text/plain&apos; (length=10)</span><br><span class="line">      2 =&gt; string &apos;text/plain&apos; (length=10)</span><br><span class="line">  &apos;tmp_name&apos; =&gt; </span><br><span class="line">    array (size=3)</span><br><span class="line">      0 =&gt; string &apos;D:\wamp64\tmp\phpC5E8.tmp&apos; (length=25)</span><br><span class="line">      1 =&gt; string &apos;D:\wamp64\tmp\phpC5E9.tmp&apos; (length=25)</span><br><span class="line">      2 =&gt; string &apos;D:\wamp64\tmp\phpC5EA.tmp&apos; (length=25)</span><br><span class="line">  &apos;error&apos; =&gt; </span><br><span class="line">    array (size=3)</span><br><span class="line">      0 =&gt; int 0</span><br><span class="line">      1 =&gt; int 0</span><br><span class="line">      2 =&gt; int 0</span><br><span class="line">  &apos;size&apos; =&gt; </span><br><span class="line">    array (size=3)</span><br><span class="line">      0 =&gt; int 0</span><br><span class="line">      1 =&gt; int 0</span><br><span class="line">      2 =&gt; int 0</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>index.php文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;fileSystem.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;100000&quot; /&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;myPicture[]&quot; size= &quot;25&quot; maxlength=&quot;100&quot;&gt;&lt;br&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;myPicture[]&quot; size= &quot;25&quot; maxlength=&quot;100&quot;&gt;&lt;br&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;myPicture[]&quot; size= &quot;25&quot; maxlength=&quot;100&quot;&gt;&lt;br&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>fileSystem文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    if (empty($_POST)) &#123;</span><br><span class="line">        exit(&quot;提交的表单数据超过post_max_size的配置&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $arr = $_FILES[&apos;myPicture&apos;];</span><br><span class="line">    $file =array();</span><br><span class="line">    for ($i=0; $i &lt; count($arr[&apos;name&apos;]); $i++) &#123; </span><br><span class="line">        $file[$i][&apos;name&apos;] = $arr[&apos;name&apos;][$i];</span><br><span class="line">        $file[$i][&apos;type&apos;] = $arr[&apos;type&apos;][$i];</span><br><span class="line">        $file[$i][&apos;tmp_name&apos;] = $arr[&apos;tmp_name&apos;][$i];</span><br><span class="line">        $file[$i][&apos;error&apos;] = $arr[&apos;error&apos;][$i];</span><br><span class="line">        $file[$i][&apos;size&apos;] = $arr[&apos;size&apos;][$i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    for ($i=0; $i &lt; count($file); $i++) &#123; </span><br><span class="line">        switch ($file[$i][&apos;error&apos;]) &#123;</span><br><span class="line">            case 0:          </span><br><span class="line">                $fileName = $file[$i][&apos;name&apos;];</span><br><span class="line">                $fileTemp = $file[$i][&apos;tmp_name&apos;];</span><br><span class="line">                $destination = &quot;uploads/&quot; . $file[$i][&apos;name&apos;];</span><br><span class="line">                move_uploaded_file($fileTemp, $destination);</span><br><span class="line">                echo &quot;上传成功&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 1:</span><br><span class="line">                echo &quot;上传附件超过php.ini中的upload_max_filesize选项的限制&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 2:</span><br><span class="line">                echo &quot;上传附件的大小超过了form表单MAX_FILE_SIZE选项指定的值&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 3:</span><br><span class="line">                echo &quot;附件只有部分被上传&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 4:</span><br><span class="line">                echo &quot;没有选择上传附件&quot;;</span><br><span class="line">                break;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;   </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/serverSide/">后端</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>文章为原创作品，转发请留言</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2018 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '05/2/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>
