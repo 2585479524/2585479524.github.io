@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="周宣锐">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>求解最长回文子串----manacher 算法 - 无关--私人IT技术博客</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="数据结构与算法--JAVA">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="锐">锐</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">周宣锐</h1>
+        <h3 class="cover-siteTitle">不跟风，不动摇</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-telegram">
+                <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+                    <i class="fa fa-telegram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-instagram">
+                <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-twitter">
+                <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/big-front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/serverSide" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/design" data-name="设计">设计</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="资源">资源</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="http://rebright.top" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">周宣锐</a>
+                    <span title="最后编辑于2018-05-05">2018-05-05</span>
+                </p>
+                <p>会前端的游戏开发者</p>
+            </div>
+            <h2 class="post-title">求解最长回文子串----Manacher 算法</h2>
+            <div class="post-meta">
+                本文总共4041个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>最长回文子串问题：给定一个字符串，求它的最长回文子串长度。</p>
+<p>如果一个字符串正着读和反着读是一样的，那么我们称之为回文串。例如：abba、aaaa、abvcba、123321等</p>
+<p>暴力法：遍历字符串的所有子串，对每个字串进行判断。求字符串的所有子串时间复杂度为O(n^2)，判断回文后，总的时间复杂度为O(n^3)。我们规定在判断回文的时候从最长的子串开始，一旦找到就返回。判断回文的时候，采用从外到内左右成对推进方式进行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    static String str = new String();</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">		Scanner in = new Scanner(System.in);</span><br><span class="line">		str = in.next();</span><br><span class="line">		System.out.println(sub());</span><br><span class="line">	&#125;</span><br><span class="line">	private static int sub() &#123;</span><br><span class="line">		int low, high;</span><br><span class="line">		for (int len = str.length() - 1; len &gt; 0; len--) &#123;</span><br><span class="line">			for (low = 0, high = low + len; high &lt; str.length(); low++, high++) &#123;</span><br><span class="line">				if (check(low, high)) &#123;</span><br><span class="line">					return high - low + 1;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	private static boolean check(int low, int high) &#123;</span><br><span class="line">		while (low &lt;= high) &#123;</span><br><span class="line">			if (str.charAt(low) == str.charAt(high)) &#123;</span><br><span class="line">				low++;</span><br><span class="line">				high--;</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return true;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从内到外逐个推进方式：由于回文串的特性，我们可以以每个位置为中心进行检查，这样可以不用暴力所有的子串，减少了重复的判断。时间复杂度为O(n^2)。这里要注意检查是要关注奇偶的不同情况，如abba和aba。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main2 &#123;</span><br><span class="line">	static String str = new String();</span><br><span class="line">	static int max = 0;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">		Scanner in = new Scanner(System.in);</span><br><span class="line">		str = in.next();</span><br><span class="line">		sub();</span><br><span class="line">		System.out.println(max);</span><br><span class="line">	&#125;</span><br><span class="line">	private static void sub() &#123;</span><br><span class="line">		if (str.length() == 1) &#123;</span><br><span class="line">			max = 1;</span><br><span class="line">		&#125;</span><br><span class="line">		for (int i = 0; i &lt; str.length() - 1; i++) &#123;</span><br><span class="line">			check(i, i);</span><br><span class="line">			check(i, i+1);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	private static void check(int low, int high) &#123;</span><br><span class="line">		while (low &gt;= 0 &amp;&amp; high &lt; str.length()) &#123;</span><br><span class="line">			if (str.charAt(low) == str.charAt(high)) &#123;</span><br><span class="line">				if (high - low + 1 &gt; max) &#123;</span><br><span class="line">					max =  high - low + 1;</span><br><span class="line">				&#125;</span><br><span class="line">				low--;</span><br><span class="line">				high++;</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				return;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Manacher算法：俗称马拉车算法。这是目前求解最长回文串的最优算法。第二种思路在会将从str.charAt(0)一直检查到str.charAt(lstr.length-1)，这样的话还是有许多不必要的操作，而这种算法的核心就在于优化了这一块的判断，跳过某些不必要的值。</p>
+<p>由于回文串会出现奇数和偶数不同的情况，如abba和abcba，算法采用插入“#”的方法，使得所有的串都变成奇数串（“$”是占0的位置，从1开始方便操作），这个新的串我们命名为s_new[]。之后定义p[]，用p[i]表示以s_new[i]为中心的最长回文串的半径（包含自身），如abcba的s_new[“c”] = 3 (半径为2，再加自身)。我们以字符串abbabcbac为例，最长回文子串为abcba，长度为5。</p>
+<p><img src="/img/2018/manacherInJava/1.png" alt="示意图"><br>那么如何计算p[i]就成了这个算法的难点，我们自然不能按着思路二：先令p[i]=1，再以s_new[i]为中心判断两侧是否相等，p[i]++，这是非常低效的。实际上，我们可以不让p[i]初始化为1，我们设定两个变量mx和id，id为s_new[i]的下标（也就是i），mx表示以s_new[id]为中心的最长回文串的右侧边界，以abcba为例，s_new[“c”] = 3，id=2（”c”的下标），对应的mx=id+s_new[“c”] = 5，刚好就是最右侧”a”的下标。</p>
+<p>结合下图，对于i&lt;mx的情况 , 存在p[i] = min(p [2*id-i], mx-i)。</p>
+<p><img src="/img/2018/manacherInJava/2.png" alt="示意图"></p>
+<p>解释一下上面式子，2<em>id-i = j，所以p[2</em>id - i] = p[j]，即以s_new[j]为中心的最长回文串的半径（包含自身）。因为以id为中心的回文子串的长度为mx与其对称点之间的距离，而要求p[i]，则可以利用p[j]来加快查找。</p>
+<p>而之所以上面的式子成立是需要深入探讨的，有兴趣的朋友可以参考<a href="https://segmentfault.com/a/1190000008484167" target="_blank" rel="noopener">Manacher算法</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">    static String str = new String();</span><br><span class="line">    static char[] s_new;</span><br><span class="line">    static int[] p;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">		Scanner in = new Scanner(System.in);</span><br><span class="line">		str = in.next();</span><br><span class="line">		s_new = new char[str.length() * 2 + 2];</span><br><span class="line">		p = new int[str.length() * 2 + 2];</span><br><span class="line">		</span><br><span class="line">		System.out.println(Manacher());</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	private static int Manacher() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		int len = init();</span><br><span class="line">		int maxlen = -1;</span><br><span class="line">		int id = 0;</span><br><span class="line">		int mx = 0;</span><br><span class="line">		for (int i = 1; i &lt; len; i++) &#123;</span><br><span class="line">			if (i &lt; mx) &#123;</span><br><span class="line">				p[i] = Math.min(p[2 * id - i], mx - i);</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				p[i] = 1;</span><br><span class="line">			&#125;</span><br><span class="line">			while (i + p[i] &lt; s_new.length &amp;&amp; i - p[i] &gt;= 0 &amp;&amp;s_new[i - p[i]] == s_new[i + p[i]]) &#123;</span><br><span class="line">				p[i]++;</span><br><span class="line">			&#125;</span><br><span class="line">			if (mx &lt; i + p[i]) &#123;</span><br><span class="line">				id = i;</span><br><span class="line">				mx = i + p[i];</span><br><span class="line">			&#125;</span><br><span class="line">			maxlen = Math.max(maxlen, p[i] - 1);</span><br><span class="line">		&#125;</span><br><span class="line">		return maxlen;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	private static int init() &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		s_new[0] = &apos;$&apos;;</span><br><span class="line">		s_new[1] = &apos;#&apos;;</span><br><span class="line">		int j = 2;</span><br><span class="line">		</span><br><span class="line">		for (int i = 0; i &lt; str.length(); i++) &#123;</span><br><span class="line">			s_new[j++] = str.charAt(i);</span><br><span class="line">			s_new[j++] = &apos;#&apos;;</span><br><span class="line">		&#125;</span><br><span class="line">		return j;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/算法思想/">算法思想</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>文章为原创作品，转发请留言</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2018 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '05/2/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

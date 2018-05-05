@@ -167,7 +167,7 @@
         </div>
         <div class="post-content markdown-body">
             <p>之前我们介绍了求最短路径算法，现在又讲最小生成树算法，这两个算法有什么区别呢？</p>
-<p>首先要明确，<strong>最短路径和最小生成树是两个不同的概念</strong>。<br><strong>最短路径</strong>是对于一个图的两个结点而言的。在一个图中，结点A通过某些结点和边可以走到结点B，这些结点和边组成的从A到B的路径中，最短路径就这些路径中权值总和最小的那一条（或多条）。<br>最短路径常用算法有：<strong>Floyd</strong>、<strong>Dijkstra</strong>、SPFA、A*等</p>
+<p>首先要明确，<strong>最短路径和最小生成树是两个不同的概念</strong>。<br><strong>最短路径</strong>是对于一个图的两个结点而言的。在一个图中，结点A通过某些结点和边可以走到结点B，这些结点和边组成的从A到B的路径中，最短路径就这些路径中权值总和最小的那一条（或多条）。<br>最短路径常用算法有：<strong>Floyd</strong>、<strong>Dijkstra</strong>、<strong>SPFA</strong>、<strong>A*</strong>等</p>
 <p><strong>最小生成树</strong>是对于一个图本身而言的。对于一个有n个结点的无向连通图，必然可以去掉某些边,使得最终剩下n-1条边，与n个结点共同组成原图的一个生成树，而最小生成树就是所有可能的生成树中n-1条边的权值总和最小的那一个（或多个）。<br>常用算法有：<strong>Kruskal</strong>、<strong>Prim</strong></p>
 <hr>
 <p>我们现在在1号位置，我们要走遍图中的所有顶点，各条路上的数值即为权值，求这个过程中的最小权值是多少？</p>

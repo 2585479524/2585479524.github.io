@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="周宣锐">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>模式匹配算法----kmp算法以及next数组的解法 - 无关--私人IT技术博客</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="数据结构与算法--JAVA">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="锐">锐</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">周宣锐</h1>
+        <h3 class="cover-siteTitle">不跟风，不动摇</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-telegram">
+                <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+                    <i class="fa fa-telegram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-instagram">
+                <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-twitter">
+                <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/big-front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/serverSide" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/design" data-name="设计">设计</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="资源">资源</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="http://rebright.top" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">周宣锐</a>
+                    <span title="最后编辑于2018-05-05">2018-05-05</span>
+                </p>
+                <p>会前端的游戏开发者</p>
+            </div>
+            <h2 class="post-title">模式匹配算法----KMP算法以及next数组的解法</h2>
+            <div class="post-meta">
+                本文总共4028个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="KMP算法："><a href="#KMP算法：" class="headerlink" title="KMP算法："></a>KMP算法：</h2><p>求字符串匹配（也叫模式匹配）的算法，即给定一个字符串，求其某一子串在其中出现的位置。</p>
+<p>例如：给定字符串为abcabaaabaabcac，求其子串abaabcac在其中出现的位置。</p>
+<p>结果为7</p>
+<p>对于这种问题，没有经验的编程者通常会采用逐个匹配的方法，来得出结果。这就是最简单一种算法思想。</p>
+<ol>
+<li>逐个进行比较，如果相同，就继续比较下一个，但是我们可以看到下图中，c与a不相同，这就是所谓的“失配”。<br><img src="/img/2018/kmpInJava/1.png" alt="示意图"></li>
+<li>当发生失配，我们会将子字符串逐个后移，直到新的匹配建立，再逐个比较<br><img src="/img/2018/kmpInJava/2.png" alt="示意图"><br><img src="/img/2018/kmpInJava/3.png" alt="示意图"><br>3.<br><img src="/img/2018/kmpInJava/4.png" alt="示意图"><br>4.<br><img src="/img/2018/kmpInJava/5.png" alt="示意图"><br>5.<br><img src="/img/2018/kmpInJava/6.png" alt="示意图"><br>6.<br><img src="/img/2018/kmpInJava/7.png" alt="示意图"><br>7.<br><img src="/img/2018/kmpInJava/8.png" alt="示意图"></li>
+</ol>
+<p>根据上面的方法，我们可以看到第二步有两个图，这是为什么呢？这是因为当出现失配时候，字符串每次后移一个的方法，不能够立刻建立匹配，还需要继续后移才能建立。也就是说，这种情况下，后移两个才能建立匹配。</p>
+<p>当然这个例子比较小，只出现了两次这种情况，但是如果是较大的数据，这种冗余操作是十分低效的。这也就是KMP算法优化的地方。</p>
+<p><strong>KMP</strong>算法会创建一个next[]数组，用来保存一个字符失配后，到底<strong>跳转</strong>到第几个的位置才能更快速的建立匹配。这里用了跳转这个词，因为并不是向后移动next[i]位，而应该是往后移动，是失配位与第next[i]位相对。这个数组是KMP算法的核心。下表为子字符串abaabcac的next数组，（至于为什么叫next，因为当初创造算法的三个人就是这么叫的，对，就是三个人创的这个算法，这三个人的名字首字母就是K，M，P）</p>
+<p><img src="/img/2018/kmpInJava/9.png" alt="示意图"></p>
+<p>next数组求解思路：</p>
+<p>以abaabcac为例</p>
+<p>第一位和第二位分别为0和1，这是一定的。之后的每一位的next[i]，需要看第[i-1]位的值与第[第i-1位的next值]位的值相比，这里比较难理解，不明白的读者可以参考下面的例子，实际上如果我们如果求next[i]，需要看的是i-1是否等于next[i-1] ，如果不同，查看第i-1位的next值是否为1，如果为1，则需继续比较，如果为0，则可以得出结果。而相同的结果为next[i-1]+1， </p>
+<p>第一位：next[1]=0</p>
+<p>第二位：next[2]=1</p>
+<p>第三位：将第二位的值”b”与第[第二位的next值=1]位的值”a”相比，不同，为1（因为第一位的next值为0，所以不需要继续比较）</p>
+<p>第四位：将第三位的值”a”与第[第三位的next值=1]位的值”a”相比，相同，则为next[3]+1=2</p>
+<p>第五位：将第四位的值”a”与第[第四位的next值=2]位的值”b”相比，不同，因为第二位的next值为1，再将第四位的值”a”与第[第二位的next值=1]位的值”a”相比，相同，则为next[2]+1=2</p>
+<p>第六位：将第五位的值”b”与第[第五位的next值=2]位的值”b”相比，相同，则为next[5]+1=3</p>
+<p>第七位：将第六位的值”c”与第[第六位的next值=3]位的值”a”相比，不同，因为第三位的next值为1，再将第六位的值”c”与第[第二位的next值=1]位的值”a”相比，不同，则为1</p>
+<p>第八位：将第七位的值”a”与第[第七位的next值=1]位的值”a”相比，相同，则为next[7]+1=2</p>
+<p>求解next数组代码：我们从第3位开始，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">private static int[] get_Next(String str)&#123; </span><br><span class="line">    int[] next = new int[str.length()+1];  </span><br><span class="line">    int j = next[2];</span><br><span class="line">    // 这里next[1]和next[2]直接赋值</span><br><span class="line">    next[1] = 0;</span><br><span class="line">    next[2] = 1;</span><br><span class="line">    // 第2位之后的next,为什么从2开始，不是已经赋值了吗？这在于str.charAt(0)为字符串的第一个字母</span><br><span class="line">    for(int i = 2; i &lt; str.length(); i++) &#123;  </span><br><span class="line">        while(j &gt; 0 &amp;&amp; str.charAt(i-1) != str.charAt(j)) &#123;</span><br><span class="line">        	j = next[j]; </span><br><span class="line">        &#125;</span><br><span class="line">        if(str.charAt(i-1) == str.charAt(j)) &#123;</span><br><span class="line">        	j++;</span><br><span class="line">        &#125;</span><br><span class="line">        next[i] = j;</span><br><span class="line">    &#125;  </span><br><span class="line">    return next; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>根据next数组，我们再来做一遍这个题目：给定字符串为abcabaaabaabcac，求其子串abaabcac在其中出现的位置。</p>
+<p>1.创建匹配，第4个字符发生失配</p>
+<p><img src="/img/2018/kmpInJava/10.png" alt="示意图"></p>
+<p>2.使失配位与第next[4]=2位相对，但是这是第二个字符又失配了</p>
+<p><img src="/img/2018/kmpInJava/11.png" alt="示意图"></p>
+<p>3.使失配位与第next[2]=1位相对，此时第一个字符就失配</p>
+<p><img src="/img/2018/kmpInJava/12.png" alt="示意图"></p>
+<p>4.使失配位与第next[1]=0位相对，注意我们的next数组是从1开始算的，所以相当于整体后移一个单位，下图的失配位实际是”c”</p>
+<p><img src="/img/2018/kmpInJava/13.png" alt="示意图"></p>
+<p>5.</p>
+<p><img src="/img/2018/kmpInJava/14.png" alt="示意图"></p>
+<p>6.</p>
+<p><img src="/img/2018/kmpInJava/15.png" alt="示意图"></p>
+<p>7.</p>
+<p><img src="/img/2018/kmpInJava/16.png" alt="示意图"></p>
+<p>虽然上面这个流程看不太出来KMP算法的优势，但还是比暴力的方式要好很多的。当然还有一种BM算法效率比KMP算法还好。有兴趣的读者可以参考<a href="/2018/05/05/spaceAndTimeInJava">深入浅出讲算法思想–时空权衡算法思想分析及应用</a></p>
+<p>完整代码如下：</p>
+<p>public class Main {<br>    public static void main(String[] args) {<br>        String str = “abaabcac”;<br>        String orig =”aabaabcac”;<br>        int[] next = get_Next(str);<br>        for (int i = 1; i &lt; next.length; i++) {<br>            System.out.print(next[i] + “ “);<br>        }<br>        System.out.println();<br>        search(orig, str, next);<br>    }  </p>
+<pre><code>//next[i]表示的是str的&quot;部分匹配表&quot;,这个表表示的是str前缀与后缀的最长公共字符串的长度
+private static int[] get_Next(String str){ 
+    int[] next = new int[str.length()+1];  
+    int j = next[2];
+    // 这里next[1]和next[2]直接赋值
+    next[1] = 0;
+    next[2] = 1;
+    // 第2位之后的next,为什么从2开始，不是已经赋值了吗？这在于str.charAt(0)为字符串的第一个字母
+    for(int i = 2; i &lt; str.length(); i++) {  
+        while(j &gt; 0 &amp;&amp; str.charAt(i-1) != str.charAt(j)) {
+            j = next[j]; 
+        }
+        if(str.charAt(i-1) == str.charAt(j)) {
+            j++;
+        }
+        next[i] = j;
+    }  
+    return next; 
+}  
+
+//orig为主串，而find为模式串，查找匹配位置以及匹配长度  
+private static void search(String orig, String find, int[]next){  
+    int j = next[0];  
+    for(int i = 0;i &lt; orig.length(); i++){  
+        while(j &gt; 0 &amp;&amp; orig.charAt(i) != find.charAt(j))  
+            j = next[j];  
+        if(orig.charAt(i) == find.charAt(j)){  
+            j++;  
+        }
+        if(j == find.length()){  
+            System.out.println(&quot;find at position &quot; + (i - j+1));    
+            System.out.println(orig.subSequence(i - j + 1, i + 1));    
+            j = next[j];
+        }
+    }
+}
+</code></pre><p>}</p>
+<p>上面代码是完全正确的，但是细心的读者如果将next打印出来后，会发现next实际上为下面的nextval这种情况</p>
+<p>i    1    2    3    4    5    6    7    8<br>str.charAt(i)    a    b    a    a    b    c    a    c<br>next[i]    0    1    1    2    2    3    1    2<br>nextval[i]    0    0    1    1    2    0    1    0<br>网上的代码各种各样，无论是next数组还是nextval数组都是各种写法，是在找不到合适的代码贴上，过一阵子再说吧，有兴趣的读者可以参考KMP算法及next数组详解</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/算法思想/">算法思想</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>文章为原创作品，转发请留言</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2018 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '05/2/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

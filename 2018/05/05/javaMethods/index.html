@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="周宣锐">
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>java刷题方法整理 - 无关--私人IT技术博客</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="总结一些常用的JAVA技巧">
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="锐">锐</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">周宣锐</h1>
+        <h3 class="cover-siteTitle">不跟风，不动摇</h3>
+        <p class="cover-siteDesc">一个关注技术与人文的IT博客</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-telegram">
+                <a href="http://t.me/kunyintang" target="_blank" title="telegram" ref="friend">
+                    <i class="fa fa-telegram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-instagram">
+                <a href="https://www.instagram.com/mtangsir/" target="_blank" title="instagram" ref="friend">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-twitter">
+                <a href="https://twitter.com/tangkunyin" target="_blank" title="twitter" ref="friend">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/tangkunyin" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/big-front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/serverSide" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/design" data-name="设计">设计</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="资源">资源</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="http://rebright.top" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">周宣锐</a>
+                    <span title="最后编辑于2018-05-05">2018-05-05</span>
+                </p>
+                <p>会前端的游戏开发者</p>
+            </div>
+            <h2 class="post-title">JAVA刷题方法整理</h2>
+            <div class="post-meta">
+                本文总共3095个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <h2 id="JAVA刷题方法整理"><a href="#JAVA刷题方法整理" class="headerlink" title="JAVA刷题方法整理"></a>JAVA刷题方法整理</h2><p><strong>一、String—&gt;String[]</strong></p>
+<p>利用String.split()实现<br>注：在使用String.split 方法分隔字符串时，分隔符如果用到一些特殊字符，可能会得不到我们预期的结果，</p>
+<pre>例如 |，*，+等，需要变为 \\|，\\*，\\+才可以。</pre>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = new String(&quot;abcedfg&quot;);</span><br><span class="line">   String[] arr = str.split(&quot;&quot;);</span><br></pre></td></tr></table></figure>
+<p>利用String.toCharArray()实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = new String(&quot;abcedfghig&quot;);</span><br><span class="line">char[] chr  = str.toCharArray();</span><br></pre></td></tr></table></figure></p>
+<p><strong>二、String[] —&gt; String</strong></p>
+<p>借助StringBuffer类的append()，String本身不具备此方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String[] str = new String[]&#123;&quot;abc&quot;,&quot;123&quot;,&quot;78&quot;&#125;;</span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line"></span><br><span class="line">        for(int i = 0;i&lt;str.length;i++)&#123;</span><br><span class="line">            sb.append(str[i]);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>三、char[] —&gt; String</strong></p>
+<p>通过char.toString()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char[] chr = new char[]&#123;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;&#125;;</span><br><span class="line">   chr.toString();</span><br></pre></td></tr></table></figure></p>
+<p>通过String.valueOf()<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char[] chr = new char[]&#123;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;&#125;;</span><br><span class="line">        String.valueOf(chr);</span><br></pre></td></tr></table></figure></p>
+<p><strong>四、处理末位带空格的情况</strong></p>
+<p>针对末位带空格，通过StringBuffer或者StringBuilder来实现存储，并能够进行多次修改<br>通过StringBuffer实例.substring(0,StringBuffer实例.length()-1)实现将末位空格去除，再统一输出</p>
+<p><strong>五、其他类型转String</strong><br>直接调用String.valueOf()进行转换<br>也使用可以使用int+””；转成字符串<br>通过String.chatAt()获取下标元素<br>通过String.substring()截取i之后的元素<br>通过String.split(“”)分隔字符串得到数组</p>
+<p><strong>六、String—&gt;int</strong><br>String a = Integer.valueOf(b);<br>String a = Integer.ParseInt(b);</p>
+<p><strong>七、char–&gt;String</strong><br>String str = String.valueOf(char)<br>八、自定义排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(point,0, n, new Comparator&lt;Point&gt;() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(Point o1, Point o2) &#123;</span><br><span class="line">        if (o1.x - o2.x == 0) &#123;</span><br><span class="line">            return (int) (o1.y - o2.y);</span><br><span class="line">        &#125;</span><br><span class="line">        return (int) (o1.x - o2.x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>九、for each 输出</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (Point i:point</span><br><span class="line">        ) &#123;</span><br><span class="line">       System.out.println(i.x + &quot;,&quot; + i.y);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>十、大数阶乘</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import java.math.BigInteger;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">public class Main&#123;</span><br><span class="line">    public static void main(String[] args) &#123;     </span><br><span class="line">    Scanner inputScanner=new Scanner(System.in);</span><br><span class="line">       while(inputScanner.hasNext())</span><br><span class="line">       &#123;</span><br><span class="line">           int n=inputScanner.nextInt();</span><br><span class="line">           BigInteger m;</span><br><span class="line">           m=BigInteger.valueOf(1);//将m定义成大数的1</span><br><span class="line">           for(int i=1;i&lt;=n;i++)</span><br><span class="line">           &#123;</span><br><span class="line">               m=m.multiply(BigInteger.valueOf(i));//大数乘法</span><br><span class="line">           &#125;</span><br><span class="line">           System.out.println(m);</span><br><span class="line">       &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>十一、大数加、减、乘、除、取余</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//定义：</span><br><span class="line">BigDemical bg = new BigDemical(int)</span><br><span class="line">BigDemical bg = new BigDemical(String)</span><br><span class="line">//加：</span><br><span class="line">jia = bg.add(new BigDemical(1))</span><br><span class="line">//减：</span><br><span class="line">jian = bg.subtract(new BigDemical(1))</span><br><span class="line">//乘：</span><br><span class="line">cheng = bg.multiply(new BigDemical(1))</span><br><span class="line">//除：</span><br><span class="line">chu = bg.divide(new BigDemical(1))</span><br><span class="line">//取余</span><br><span class="line">yu = bg.divideAndRemainder(new BigDemical(2))</span><br><span class="line">//返回一个数组：商yu[0] 余数yu[1]</span><br></pre></td></tr></table></figure>
+<p><strong>十二、Java Character 类</strong><br>Character 类用于对单个字符进行操作。<br>Character 类在对象中包装一个基本类型 char 的值<br><strong>十三、模运算</strong><br>a&amp;1 等价于 a%2 == 0<br>a&gt;&gt;=1 等价于 a/=2<br><strong>十四、next()与nextLine()</strong><br>next()一定要读取到有效字符后才可以结束输入，对输入有效字符之前遇到的空格键、Tab键或Enter键等结束符，next()方法会自动将其去掉，只有在输入有效字符之后，next()方法会将输入的空格键、Tab键或Enter键等视为分隔符或结束符，所以next方法不能得到带空格的字符串。<br>而nextLine()方法的结束符只是Enter键，即nextLine()方法返回的是Enter键之前的所有字符，它是可以得到带空格的字符串的。<br>要注意的是在每一个 next()、nextDouble() 、 nextFloat()、nextInt() 等语句之后如果还有一个nextLine()，需要再加一个nextLine()语句，将next()之后Enter结束符过滤掉，否则nextLine()会读取到Enter，而不能继续读取数据。</p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/serverSide/">后端</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>文章为原创作品，转发请留言</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/help" title="help" >急救中心</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <a href="/app" title="App下载">App下载</a>
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©2018 基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            
+        </p>
+        
+
+    </div>
+</footer>
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '05/2/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>
