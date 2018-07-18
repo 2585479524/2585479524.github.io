@@ -18,11 +18,11 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>分类 - 曾经沧海 - 无关--私人IT技术博客</title>
+<title>git报错“another git process seems to be running in this repository...” - 无关--私人IT技术博客</title>
 
 <meta name="keywords" content="">
 
-<meta name="description " content="">
+<meta name="description " content="git报错">
 </head>
 <body>
 <div id="nav">
@@ -89,25 +89,25 @@
 </div>
             <div class="page-title">
     <ul>
-        <li class="">
-            <a href="/" data-name="最近文章">最近</a>
-        </li>
+        <li><a href="/">最新</a></li>
         
-        <li class="">
-            <a href="/categories/big-front-end" data-name="前端">前端</a>
-        </li>
-        
-        <li class="">
-            <a href="/categories/serverSide" data-name="后端">后端</a>
-        </li>
-        
-        <li class="">
-            <a href="/categories/unity" data-name="Unity">Unity</a>
-        </li>
-        
-        <li class="active">
-            <a href="/categories/resource" data-name="曾经沧海">曾经沧海</a>
-        </li>
+            
+                <li class="">
+                    <a href="/categories/big-front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/serverSide" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/unity" data-name="Unity">Unity</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/resource" data-name="曾经沧海">曾经沧海</a>
+                </li>
+            
         
         <li class="page-search">
     <form id="search" class="search-form">
@@ -148,174 +148,51 @@
     </ul>
 </div>
 <div class="main-inner">
-    
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>牧</strong>
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">牧</a>
+                    <span title="最后编辑于2018-07-18">2018-07-18</span>
+                </p>
+                <p>会点前端的游戏开发者</p>
+            </div>
+            <h2 class="post-title">Git报错“Another git process seems to be running in this repository...”</h2>
+            <div class="post-meta">
+                本文总共428个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>在进行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></p>
+<p>的时候报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Another git process seems to be running in this repository, e.g.</span><br><span class="line">an editor opened by &apos;git commit&apos;. Please make sure all processes</span><br><span class="line">are terminated then try again. If it still fails, a git process</span><br><span class="line">may have crashed in this repository earlier:</span><br><span class="line">remove the file manually to continue.</span><br></pre></td></tr></table></figure>
+<p>原因：windows对于进程的同步互斥管理，是有资源上锁机制的。在进行git的时候进程进行了加锁操作，但是由于进程突然崩溃，未来得及解锁，导致其他进程访问不了。</p>
+<p>办法：打开项目根目录下的隐藏文件，删除.git下的index.lock文件</p>
+<p><img src="/img/2018/gitAnother/1.png" alt="这里写图片描述"></p>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
             </a>
-            <em>·</em>2018-07-18
         </div>
-        <a class="post-title" href="/2018/07/18/gitAnother/" target="_blank" title="Git报错“Another git process seems to be running in this repository...”">Git报错“Another git process seems to be running in this repository...”</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+        
+        <div class="post-tags">标签：
             
-                <em>·</em>
-                <a href="http://yoursite.com/tags/git/" target="_blank">git</a>
+            <a href="/tags/git/">git</a>
             
         </div>
-    </div>
-    <div class="post-desc">
-        git报错
-    </div>
-</article>
-
-
-
+        
+    </article>
     
+    <p>文章为原创作品，转发请留言</p>
     
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>牧</strong>
-            </a>
-            <em>·</em>2018-05-05
-        </div>
-        <a class="post-title" href="/2018/05/05/readingNotesCodingAndInterview/" target="_blank" title="读书笔记----编程之法：面试和算法心得">读书笔记----编程之法：面试和算法心得</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/resource/" target="_blank">曾经沧海</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        读书笔记
-    </div>
-</article>
-
-
-
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>牧</strong>
-            </a>
-            <em>·</em>2018-05-05
-        </div>
-        <a class="post-title" href="/2018/05/05/npmCommand/" target="_blank" title="npm常用指令汇总">npm常用指令汇总</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/resource/" target="_blank">曾经沧海</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        npm使用
-    </div>
-</article>
-
-
-
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>牧</strong>
-            </a>
-            <em>·</em>2018-05-04
-        </div>
-        <a class="post-title" href="/2018/05/04/csStudyLine/" target="_blank" title="关于大学计算机科学与技术相关专业学习路线的见解与分析">关于大学计算机科学与技术相关专业学习路线的见解与分析</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/resource/" target="_blank">曾经沧海</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        谨以此文献给仍然迷失在大学生活中的计算机专业学子！！！ 不管你是如何选择了这门专业，我想告诉你的是这是一个很深的领域，没有热爱不如尽早转行。
-    </div>
-</article>
-
-
-
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>牧</strong>
-            </a>
-            <em>·</em>2018-05-04
-        </div>
-        <a class="post-title" href="/2018/05/04/ubuntuShadowsocks/" target="_blank" title="Ubuntu(以18LTS为例)使用shadowsocks设置代理服务器">Ubuntu(以18LTS为例)使用shadowsocks设置代理服务器</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/resource/" target="_blank">曾经沧海</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        Ubuntu初探
-    </div>
-</article>
-
-
-
-    
-    
-<article class="post">
-    
-    <div class="post-header">
-        <div class="post-meta">
-            <a href="" target="_blank">
-                <strong>牧</strong>
-            </a>
-            <em>·</em>2018-05-04
-        </div>
-        <a class="post-title" href="/2018/05/04/youtubeDownloadVedio/" target="_blank" title="如何下载youtube视频">如何下载youtube视频</a>
-        <div class="post-meta">
-            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
-            
-                <em>·</em>
-                <a href="http://yoursite.com/tags/resource/" target="_blank">曾经沧海</a>
-            
-        </div>
-    </div>
-    <div class="post-desc">
-        youtube
-    </div>
-</article>
-
-
-
     
 </div>
-<!-- 分页开始 -->
-
-
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
