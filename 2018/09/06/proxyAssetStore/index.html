@@ -18,11 +18,11 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>标签云 - 无关--私人IT技术博客</title>
+<title>代理访问unity商店 - 无关--私人IT技术博客</title>
 
 <meta name="keywords" content="">
 
-<meta name="description " content="">
+<meta name="description " content="代理访问unity Asset Store">
 </head>
 <body>
 <div id="nav">
@@ -89,8 +89,26 @@
 </div>
             <div class="page-title">
     <ul>
-        <li><a href="/" data-name="首页" title="Back Home">首页</a></li>
-        <li><a href="/archives" data-name="归档" title="归档">归档</a></li>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/big-front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/serverSide" data-name="后端">后端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/unity" data-name="Unity">Unity</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="曾经沧海">曾经沧海</a>
+                </li>
+            
+        
         <li class="page-search">
     <form id="search" class="search-form">
         <label for="s" class="sr-only">请输入关键字</label>
@@ -132,51 +150,47 @@
 <div class="main-inner">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="post-header">
-            <h3 class="post-title">总的来说 - 目前共计17类标签</h3>
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">牧</a>
+                    <span title="最后编辑于2018-09-06">2018-09-06</span>
+                </p>
+                <p>会点前端的游戏开发者</p>
+            </div>
+            <h2 class="post-title">代理访问unity商店</h2>
+            <div class="post-meta">
+                本文总共121个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
         </div>
-        <p><img src="/images/tags-bg.jpg" alt="tags-bg"></p> 
-        <div class="post-content markdown-body" itemprop="articleBody">
-            <ul class="tag-list">
-                
-                <li><a href="/tags/C语言/">C语言(9)</a></li>
-                
-                <li><a href="/tags/JAVA/">JAVA(2)</a></li>
-                
-                <li><a href="/tags/PHP/">PHP(3)</a></li>
-                
-                <li><a href="/tags/flex/">flex(1)</a></li>
-                
-                <li><a href="/tags/git/">git(1)</a></li>
-                
-                <li><a href="/tags/hexo/">hexo(3)</a></li>
-                
-                <li><a href="/tags/unity/">unity(1)</a></li>
-                
-                <li><a href="/tags/vscode/">vscode(2)</a></li>
-                
-                <li><a href="/tags/vue/">vue(13)</a></li>
-                
-                <li><a href="/tags/weex/">weex(1)</a></li>
-                
-                <li><a href="/tags/刷题/">刷题(5)</a></li>
-                
-                <li><a href="/tags/big-front-end/">前端(1)</a></li>
-                
-                <li><a href="/tags/四级网络工程师/">四级网络工程师(4)</a></li>
-                
-                <li><a href="/tags/resource/">曾经沧海(5)</a></li>
-                
-                <li><a href="/tags/算法思想/">算法思想(34)</a></li>
-                
-                <li><a href="/tags/蓝桥杯/">蓝桥杯(13)</a></li>
-                
-                <li><a href="/tags/阿里云服务器/">阿里云服务器(1)</a></li>
-                
-            </ul>
-        </div>
-    </article>
-</div><!-- end #main-->
+        <div class="post-content markdown-body">
+            <p>代理情况下unity的商店是无法访问的，这是由于unity不检测代理设置，而是取环境变量中的HTTP_proxy与HTTPS_proxy的值。</p>
+<p>需要将这两个变量添加到环境变量中。</p>
+<p><img src="/img/2018/proxyAssetStore/1.png" alt="这里写图片描述"></p>
+<p>127.0.0.1代表本机IP，后面的为代理的本地端口号。</p>
 
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/unity/">unity</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>文章为原创作品，转发请留言</p>
+    
+    
+</div>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         </div><!-- end #main-->
     </div><!-- end #body -->
     <footer class="footer">
