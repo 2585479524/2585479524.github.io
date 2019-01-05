@@ -162,39 +162,74 @@
             </div>
             <h2 class="post-title">Ubuntu(以18LTS为例)使用shadowsocks设置代理服务器</h2>
             <div class="post-meta">
-                本文总共2020个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共2055个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <h2 id="安装shadowsocks"><a href="#安装shadowsocks" class="headerlink" title="安装shadowsocks"></a>安装shadowsocks</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install shadowscks</span><br></pre></td></tr></table></figure>
+            <h2>安装shadowsocks</h2>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install shadowscks</span><br></pre></td></tr></table></figure></p>
 <p><strong>查看shadowsocks是否安装成功</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sslocal --version</span><br></pre></td></tr></table></figure>
-<p><strong>配置shadowsocks</strong><br>在/home/用户名/ 下新建shadowsocks.json文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;server&quot;: &quot;外网IP地址&quot;,</span><br><span class="line"></span><br><span class="line">&quot;server_port&quot;: 50003,</span><br><span class="line"></span><br><span class="line">&quot;local_port&quot;: 1080,</span><br><span class="line"></span><br><span class="line">&quot;password&quot;: &quot;登陆密码&quot;,</span><br><span class="line"></span><br><span class="line">&quot;timeout&quot;: 600,</span><br><span class="line"></span><br><span class="line">&quot;method&quot;: &quot;aes-256-cfb&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>server  外网服务器IP<br>servier_port  服务器端口<br>local_port  本地端口，默认1080<br>passwd  服务端密码<br>timeout  超时设置<br>method  加密方法<br>使用<strong>sslocal -c /home/用户名/shadowsocks.json</strong>命令<br>终端会开启服务，但是不能关闭该终端，如需执行其他命令需要另开终端</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sslocal --version</span><br></pre></td></tr></table></figure></p>
+<p><strong>配置shadowsocks</strong>
+在/home/用户名/ 下新建shadowsocks.json文件</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;server&quot;: &quot;外网IP地址&quot;,</span><br><span class="line"></span><br><span class="line">&quot;server_port&quot;: 50003,</span><br><span class="line"></span><br><span class="line">&quot;local_port&quot;: 1080,</span><br><span class="line"></span><br><span class="line">&quot;password&quot;: &quot;登陆密码&quot;,</span><br><span class="line"></span><br><span class="line">&quot;timeout&quot;: 600,</span><br><span class="line"></span><br><span class="line">&quot;method&quot;: &quot;aes-256-cfb&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>server  外网服务器IP
+servier_port  服务器端口
+local_port  本地端口，默认1080
+passwd  服务端密码
+timeout  超时设置
+method  加密方法
+使用<strong>sslocal -c /home/用户名/shadowsocks.json</strong>命令
+终端会开启服务，但是不能关闭该终端，如需执行其他命令需要另开终端</p>
 <hr>
 <p>我们不能每次上网之前都输入sslocal  -c /home/mudao/shadowsocks.json，显然我们将其设置为开机自启。</p>
 <p>#开机自启</p>
-<p>我们都知道服务可以开机自启，但是进程不可以。这里我们需要借助<strong>supervisor</strong>来管理sslocal。<br><strong>安装supervisor</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install supervisor</span><br></pre></td></tr></table></figure></p>
-<p><strong>配置supervisor</strong><br>安装之后会在/etc/supervisor/下生成配置文件supervisor.conf<br>在文件最后添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[program:shadowsocks]</span><br><span class="line"></span><br><span class="line">command=sslocal -c /home/用户名/shadowsocks.json</span><br><span class="line"></span><br><span class="line">autostart=true</span><br><span class="line"></span><br><span class="line">autorestart=true</span><br><span class="line"></span><br><span class="line">user=root</span><br><span class="line"></span><br><span class="line">log_stderr=true</span><br><span class="line"></span><br><span class="line">logfile=/var/log/shadowsocks.log</span><br></pre></td></tr></table></figure>
+<p>我们都知道服务可以开机自启，但是进程不可以。这里我们需要借助<strong>supervisor</strong>来管理sslocal。
+<strong>安装supervisor</strong>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install supervisor</span><br></pre></td></tr></table></figure></p>
+<p><strong>配置supervisor</strong>
+安装之后会在/etc/supervisor/下生成配置文件supervisor.conf
+在文件最后添加</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[program:shadowsocks]</span><br><span class="line"></span><br><span class="line">command=sslocal -c /home/用户名/shadowsocks.json</span><br><span class="line"></span><br><span class="line">autostart=true</span><br><span class="line"></span><br><span class="line">autorestart=true</span><br><span class="line"></span><br><span class="line">user=root</span><br><span class="line"></span><br><span class="line">log_stderr=true</span><br><span class="line"></span><br><span class="line">logfile=/var/log/shadowsocks.log</span><br></pre></td></tr></table></figure></p>
 <p>如果没有生成那么我们可以自己生成</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo su #切换到root</span><br><span class="line">echo_supervisord_conf &gt; /etc/supervisor/supervisord.conf</span><br></pre></td></tr></table></figure>
-<p>在最后添加上面的配置即可<br>输入supervisord以启动supervisor</p>
-<p><strong>修改命令位置</strong><br>由于sslocal和sserver两个命令位于/usr/bin（16以上的版本），所以我们还要执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /usr/bin/sslocal /bin</span><br></pre></td></tr></table></figure>
-<p>关闭刚才打开的sslocal终端，访问<a href="https://google.com" target="_blank" rel="noopener">https://google.com</a><br>或者使用命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep sslocal</span><br></pre></td></tr></table></figure></p>
-<p><img src="/img/2018/ubuntuShadowsocks/1.png" alt="这里写图片描述"><br>两行结果说明没有问题</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo su #切换到root</span><br><span class="line">echo_supervisord_conf &gt; /etc/supervisor/supervisord.conf</span><br></pre></td></tr></table></figure></p>
+<p>在最后添加上面的配置即可
+输入supervisord以启动supervisor</p>
+<p><strong>修改命令位置</strong>
+由于sslocal和sserver两个命令位于/usr/bin（16以上的版本），所以我们还要执行</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /usr/bin/sslocal /bin</span><br></pre></td></tr></table></figure></p>
+<p>关闭刚才打开的sslocal终端，访问https://google.com
+或者使用命令
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep sslocal</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/2018/ubuntuShadowsocks/1.png" alt="这里写图片描述">
+两行结果说明没有问题</p>
 <p>现在进程可以统一交给supervisor处理了，我们只需开机自启supervisor就可以了。</p>
-<p><strong>设置supervisor开机自启</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/rc.local</span><br></pre></td></tr></table></figure></p>
+<p><strong>设置supervisor开机自启</strong>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/rc.local</span><br></pre></td></tr></table></figure></p>
 <p>不用管有没有这个文件，直接创建编辑即可，输入下面的配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service supervisor start </span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure>
-<p><strong>重启后查看服务</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service --status-all</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service supervisor start </span><br><span class="line">exit 0</span><br></pre></td></tr></table></figure></p>
+<p><strong>重启后查看服务</strong>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service --status-all</span><br></pre></td></tr></table></figure></p>
 <p>出现[+]shadowsocks和[+]supervisor即说明配置成功</p>
 <hr>
 <p>我们配置好的代理服务一般是全局的，也就是说无论是访问国内的网站还是国外的网站都会通过代理，这虽然解决了我们科学上网的问题，但所对于国内的网站我们再通过代理反而麻烦了，而且浪费服务器流浪，所以我们要设置浏览器能够自动切换。</p>
-<h2 id="配置浏览器"><a href="#配置浏览器" class="headerlink" title="配置浏览器"></a>配置浏览器</h2><p><strong>安装插件</strong><br>为Chrome安装SwitchyOmega插件，我们可以通过github地址<a href="https://github.com/FelisCatus/SwitchyOmega/releases/" target="_blank" rel="noopener">SwitchyOmega 2.5.10 for Chromium &amp; Firefox</a>进行安装<br><img src="/img/2018/ubuntuShadowsocks/2.png" alt="这里写图片描述"><br>其中.xpi文件是火狐浏览器的插件，.crx文件是谷歌浏览器的插件<br>然后打开chrome://extensions/直接拖入即可安装插件<br><strong>设置代理服务</strong><br><img src="/img/2018/ubuntuShadowsocks/3.png" alt="这里写图片描述"><br>点击左侧情景模式中的新建情景模式，命名随意，确定之后设置代理协议SOCKS5，代理服务器127.0.0.1，代理端口1080保存</p>
-<p><strong>点击情景模式中的auto switch</strong><br><img src="/img/2018/ubuntuShadowsocks/4.png" alt="这里写图片描述"><br>在<strong>安装规则列表匹配请求</strong>之后选择新创建的情景模式，默认情景模式选择直接相连。<br>规则列表设置选择AutoProxy，填入<a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</a>, 点击立即更新情景模式。<br>之后你会发现访问国内网站SwitchyOmega插件图标如下<br><img src="/img/2018/ubuntuShadowsocks/5.png" alt="这里写图片描述"><br>国外网站SwitchyOmega插件图标如下<br><img src="/img/2018/ubuntuShadowsocks/6.png" alt="这里写图片描述"></p>
+<h2>配置浏览器</h2>
+<p><strong>安装插件</strong>
+为Chrome安装SwitchyOmega插件，我们可以通过github地址<a href="https://github.com/FelisCatus/SwitchyOmega/releases/" target="_blank" rel="noopener">SwitchyOmega 2.5.10 for Chromium &amp; Firefox</a>进行安装
+<img src="/img/2018/ubuntuShadowsocks/2.png" alt="这里写图片描述">
+其中.xpi文件是火狐浏览器的插件，.crx文件是谷歌浏览器的插件
+然后打开chrome://extensions/直接拖入即可安装插件
+<strong>设置代理服务</strong>
+<img src="/img/2018/ubuntuShadowsocks/3.png" alt="这里写图片描述">
+点击左侧情景模式中的新建情景模式，命名随意，确定之后设置代理协议SOCKS5，代理服务器127.0.0.1，代理端口1080保存</p>
+<p><strong>点击情景模式中的auto switch</strong>
+<img src="/img/2018/ubuntuShadowsocks/4.png" alt="这里写图片描述">
+在<strong>安装规则列表匹配请求</strong>之后选择新创建的情景模式，默认情景模式选择直接相连。
+规则列表设置选择AutoProxy，填入https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt, 点击立即更新情景模式。
+之后你会发现访问国内网站SwitchyOmega插件图标如下
+<img src="/img/2018/ubuntuShadowsocks/5.png" alt="这里写图片描述">
+国外网站SwitchyOmega插件图标如下
+<img src="/img/2018/ubuntuShadowsocks/6.png" alt="这里写图片描述"></p>
 
         </div>
         <div class="post-tool">

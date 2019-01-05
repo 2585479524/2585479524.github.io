@@ -162,19 +162,36 @@
             </div>
             <h2 class="post-title">Vijos 1334----NASA的食物计划(01背包强化)</h2>
             <div class="post-meta">
-                本文总共1400个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共1417个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <p>背景<br>NASA(美国航空航天局)因为航天飞机的隔热瓦等其他安全技术问题一直大伤脑筋,因此在各方压力下终止了航天飞机的历史,但是此类事情会不会在以后发生，谁也无法保证,在遇到这类航天问题时,解决方法也许只能让航天员出仓维修,但是多次的维修会消耗航天员大量的能量,因此NASA便想设计一种食品方案,让体积和承重有限的条件下多装载一些高卡路里的食物.</p>
-<p>描述<br>航天飞机的体积有限,当然如果载过重的物品,燃料会浪费很多钱,每件食品都有各自的体积、质量以及所含卡路里,在告诉你体积和质量的最大值的情况下,请输出能达到的食品方案所含卡路里的最大值,当然每个食品只能使用一次.</p>
-<p>格式<br>输入格式<br>第一行 两个数 体积最大值(&lt;400)和质量最大值(&lt;400)<br>第二行 一个数 食品总数N(&lt;50).<br>第三行－第3+N行<br>每行三个数 体积(&lt;400) 质量(&lt;400) 所含卡路里(&lt;500)</p>
-<p>输出格式<br>一个数 所能达到的最大卡路里(int范围内)</p>
-<p>样例输入<br>320 350<br>4<br>160 40 120<br>80 110 240<br>220 70 310<br>40 400 220</p>
-<p>样例输出<br>550</p>
-<p>限制<br>各个测试点1s</p>
+            <p>背景
+NASA(美国航空航天局)因为航天飞机的隔热瓦等其他安全技术问题一直大伤脑筋,因此在各方压力下终止了航天飞机的历史,但是此类事情会不会在以后发生，谁也无法保证,在遇到这类航天问题时,解决方法也许只能让航天员出仓维修,但是多次的维修会消耗航天员大量的能量,因此NASA便想设计一种食品方案,让体积和承重有限的条件下多装载一些高卡路里的食物.</p>
+<p>描述
+航天飞机的体积有限,当然如果载过重的物品,燃料会浪费很多钱,每件食品都有各自的体积、质量以及所含卡路里,在告诉你体积和质量的最大值的情况下,请输出能达到的食品方案所含卡路里的最大值,当然每个食品只能使用一次.</p>
+<p>格式
+输入格式
+第一行 两个数 体积最大值(&lt;400)和质量最大值(&lt;400)
+第二行 一个数 食品总数N(&lt;50).
+第三行－第3+N行
+每行三个数 体积(&lt;400) 质量(&lt;400) 所含卡路里(&lt;500)</p>
+<p>输出格式
+一个数 所能达到的最大卡路里(int范围内)</p>
+<p>样例输入
+320 350
+4
+160 40 120
+80 110 240
+220 70 310
+40 400 220</p>
+<p>样例输出
+550</p>
+<p>限制
+各个测试点1s</p>
 <p>解析：01背包的强化版本，两个变量要符合两个条件，这里采用二维数组f[][]，三重循环实现</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">	static int maxV, maxM, n;</span><br><span class="line">	static int[] v,m,k;</span><br><span class="line">	static int[][] f;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Scanner in = new Scanner(System.in);</span><br><span class="line">		maxV = in.nextInt();</span><br><span class="line">		maxM = in.nextInt();</span><br><span class="line">		f = new int[maxV + 1][maxM + 1];</span><br><span class="line">		n = in.nextInt();</span><br><span class="line">		v = new int[n + 1];</span><br><span class="line">		m = new int[n + 1];</span><br><span class="line">		k = new int[n + 1];</span><br><span class="line">		for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">			v[i] = in.nextInt();</span><br><span class="line">			m[i] = in.nextInt();</span><br><span class="line">			k[i] = in.nextInt();</span><br><span class="line">		&#125;</span><br><span class="line">		for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">			for (int j = maxV; j &gt;= 0; j--) &#123;</span><br><span class="line">				for (int s = maxM; s &gt;= 0; s--) &#123;</span><br><span class="line">					if (j &gt;= v[i] &amp;&amp; s &gt;= m[i]) &#123;</span><br><span class="line">						f[j][s] = Math.max(f[j-v[i]][s-m[i]] + k[i], f[j][s]);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(f[maxV][maxM]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">public class Main &#123;</span><br><span class="line">	static int maxV, maxM, n;</span><br><span class="line">	static int[] v,m,k;</span><br><span class="line">	static int[][] f;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Scanner in = new Scanner(System.in);</span><br><span class="line">		maxV = in.nextInt();</span><br><span class="line">		maxM = in.nextInt();</span><br><span class="line">		f = new int[maxV + 1][maxM + 1];</span><br><span class="line">		n = in.nextInt();</span><br><span class="line">		v = new int[n + 1];</span><br><span class="line">		m = new int[n + 1];</span><br><span class="line">		k = new int[n + 1];</span><br><span class="line">		for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">			v[i] = in.nextInt();</span><br><span class="line">			m[i] = in.nextInt();</span><br><span class="line">			k[i] = in.nextInt();</span><br><span class="line">		&#125;</span><br><span class="line">		for (int i = 1; i &lt;= n; i++) &#123;</span><br><span class="line">			for (int j = maxV; j &gt;= 0; j--) &#123;</span><br><span class="line">				for (int s = maxM; s &gt;= 0; s--) &#123;</span><br><span class="line">					if (j &gt;= v[i] &amp;&amp; s &gt;= m[i]) &#123;</span><br><span class="line">						f[j][s] = Math.max(f[j-v[i]][s-m[i]] + k[i], f[j][s]);</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(f[maxV][maxM]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
         </div>
         <div class="post-tool">
             <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">

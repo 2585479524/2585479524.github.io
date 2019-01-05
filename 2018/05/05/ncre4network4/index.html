@@ -162,15 +162,17 @@
             </div>
             <h2 class="post-title">NCRE四级网络工程师考题详解----LRU与LFU的区别</h2>
             <div class="post-meta">
-                本文总共177个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共179个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <p>最近最少使用页面置换算法（LRU）淘汰的是最长时间不使用的<br>最近最不常用页面置换算法（LFU）淘汰的是一定时间内未被使用的</p>
+            <p>最近最少使用页面置换算法（LRU）淘汰的是最长时间不使用的
+最近最不常用页面置换算法（LFU）淘汰的是一定时间内未被使用的</p>
 <p>我们假设有主存块为3，所需页面的走向为2 1 2 1 2 3 4</p>
 <p>注意,当调页面4时会发生缺页中断</p>
 <p><img src="/img/2018/ncre4network4/1.png" alt="连通图"></p>
-<p>若按LRU算法,应换页面1 (1页面最久未被使用)    <strong>时间最长</strong><br>但按LFU算法应换页面3 (页面3只使用了一次)   <strong>次数最少</strong></p>
+<p>若按LRU算法,应换页面1 (1页面最久未被使用)    <strong>时间最长</strong>
+但按LFU算法应换页面3 (页面3只使用了一次)   <strong>次数最少</strong></p>
 
         </div>
         <div class="post-tool">

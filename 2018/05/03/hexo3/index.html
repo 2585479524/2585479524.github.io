@@ -162,19 +162,33 @@
             </div>
             <h2 class="post-title">Hexo+GitHub 快速搭建个人博客(三)----改变主题</h2>
             <div class="post-meta">
-                本文总共894个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共908个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <p>前期准备：<br>基本的Linux命令<br>基本的GitHub命令</p>
+            <p>前期准备：
+基本的Linux命令
+基本的GitHub命令</p>
 <hr>
-<p>Hexo有多种博客框架，在 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> 里可以找到非常多优秀的博客框架，而且都是免费的。<br>首先大家可以去找一款自己喜欢的框架，可以选择浏览和直接进入GitHub进行fork<br><img src="/img/2018/hexo3/1.png" alt="这里写图片描述"><br><strong>一、拉取主题</strong><br>打开Git shell，进入Hexo目录下的themes子目录，ls一下，我们会发现里面有一个landscape文件夹，没错，这就是我们默认的主题。我们直接将主题拉取到这里面即可，执行下面的命令，我们在拉取的时候要放到一个指定的文件夹中，这个会影响后面的配置，命名一般是按照采用主题全名hexo-theme-artemisX的最后一个单词。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:MnxL/hexo-theme-artemisX.git artemisX</span><br></pre></td></tr></table></figure>
+<p>Hexo有多种博客框架，在 https://hexo.io/themes/ 里可以找到非常多优秀的博客框架，而且都是免费的。
+首先大家可以去找一款自己喜欢的框架，可以选择浏览和直接进入GitHub进行fork
+<img src="/img/2018/hexo3/1.png" alt="这里写图片描述">
+<strong>一、拉取主题</strong>
+打开Git shell，进入Hexo目录下的themes子目录，ls一下，我们会发现里面有一个landscape文件夹，没错，这就是我们默认的主题。我们直接将主题拉取到这里面即可，执行下面的命令，我们在拉取的时候要放到一个指定的文件夹中，这个会影响后面的配置，命名一般是按照采用主题全名hexo-theme-artemisX的最后一个单词。</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:MnxL/hexo-theme-artemisX.git artemisX</span><br></pre></td></tr></table></figure></p>
 <p><img src="/img/2018/hexo3/2.png" alt="这里写图片描述"></p>
-<p><strong>二、设置主题</strong><br>回到Hexo根目录下找到_config.yml文件，找到theme字段，改为之前的命名的文件夹的名字。<br><img src="/img/2018/hexo3/3.png" alt="这里写图片描述"><br>在Hexo根目录下执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s --debug</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2018/hexo3/4.png" alt="这里写图片描述"><br>通过浏览器进入<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 如果成功就会显示出主题的效果，但是也有些主题会报错，这是因为这些主题用到了一些插件，这就需要去GitHub上看一下这个主题的README了，这里面大多都会有安装主题的一些注意事项，缺少插件加上就好了。<br><strong>更新部署</strong><br>下面的命令都是简写，比较方便。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g</span><br><span class="line">hexo server    #可以先本地预览一下，也可以不用</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<p>之后我们就可以直接通过域名访问自己的博客了，后期还会在进行一些优化。这里推荐没有经验的读者可以先选择nexT主题，因为这个主题的官方文档是非常详细的适合初学者进行配置<a href="https://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">https://theme-next.iissnan.com/getting-started.html</a> ，当熟悉了基本的hexo主题的配置方式之后，可以根据自己的喜好灵活的选择其他主题。<br>注意：如果写的文章在显示的时候出现中文乱码，可以选择退出记事本，改用notpad++等编辑器修改编码。</p>
+<p><strong>二、设置主题</strong>
+回到Hexo根目录下找到_config.yml文件，找到theme字段，改为之前的命名的文件夹的名字。
+<img src="/img/2018/hexo3/3.png" alt="这里写图片描述">
+在Hexo根目录下执行</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s --debug</span><br></pre></td></tr></table></figure></p>
+<p><img src="/img/2018/hexo3/4.png" alt="这里写图片描述">
+通过浏览器进入http://localhost:4000/ 如果成功就会显示出主题的效果，但是也有些主题会报错，这是因为这些主题用到了一些插件，这就需要去GitHub上看一下这个主题的README了，这里面大多都会有安装主题的一些注意事项，缺少插件加上就好了。
+<strong>更新部署</strong>
+下面的命令都是简写，比较方便。
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g</span><br><span class="line">hexo server    #可以先本地预览一下，也可以不用</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
+<p>之后我们就可以直接通过域名访问自己的博客了，后期还会在进行一些优化。这里推荐没有经验的读者可以先选择nexT主题，因为这个主题的官方文档是非常详细的适合初学者进行配置https://theme-next.iissnan.com/getting-started.html ，当熟悉了基本的hexo主题的配置方式之后，可以根据自己的喜好灵活的选择其他主题。
+注意：如果写的文章在显示的时候出现中文乱码，可以选择退出记事本，改用notpad++等编辑器修改编码。</p>
 
         </div>
         <div class="post-tool">

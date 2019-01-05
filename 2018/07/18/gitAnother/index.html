@@ -162,13 +162,14 @@
             </div>
             <h2 class="post-title">Git报错“Another git process seems to be running in this repository...”</h2>
             <div class="post-meta">
-                本文总共428个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共429个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <p>在进行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></p>
+            <p>在进行
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></p>
 <p>的时候报错</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Another git process seems to be running in this repository, e.g.</span><br><span class="line">an editor opened by &apos;git commit&apos;. Please make sure all processes</span><br><span class="line">are terminated then try again. If it still fails, a git process</span><br><span class="line">may have crashed in this repository earlier:</span><br><span class="line">remove the file manually to continue.</span><br></pre></td></tr></table></figure>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Another git process seems to be running in this repository, e.g.</span><br><span class="line">an editor opened by &apos;git commit&apos;. Please make sure all processes</span><br><span class="line">are terminated then try again. If it still fails, a git process</span><br><span class="line">may have crashed in this repository earlier:</span><br><span class="line">remove the file manually to continue.</span><br></pre></td></tr></table></figure></p>
 <p>原因：windows对于进程的同步互斥管理，是有资源上锁机制的。在进行git的时候进程进行了加锁操作，但是由于进程突然崩溃，未来得及解锁，导致其他进程访问不了。</p>
 <p>办法：打开项目根目录下的隐藏文件，删除.git下的index.lock文件</p>
 <p><img src="/img/2018/gitAnother/1.png" alt="这里写图片描述"></p>

@@ -162,23 +162,35 @@
             </div>
             <h2 class="post-title">Vue入门(六)----vue-loader 、vue-cli</h2>
             <div class="post-meta">
-                本文总共1038个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共1053个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
-            <h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p>vue-loader，来源于css-rouder、url-loader、html-loader…<br>后台node.js–&gt;require exports等都是基于模块的开发<br>broserify  较早的模块加载器，但是只能加载js<br>webpack，模块加载器，一切东西皆模块，最后打包到一起<br>vue-loader是基于webpack的  <strong>.vue文件</strong> 由vue-loader构成的，放置vue组件代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">// html</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">// css</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">// js  (普通js代码、ES6 需要通过babel-loader编译成ES5)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>目录结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|-idnex.html</span><br><span class="line">|-main.js            //入口文件</span><br><span class="line">|-App.vue            //vue文件</span><br><span class="line">|-packge.json        //工程文件（项目依赖，名称，配置）  用npm init --yes生成</span><br><span class="line">|-webpack.config.js  //webpack配置文件</span><br></pre></td></tr></table></figure></p>
-<p>ES6：模块化开发<br>导出模块：export default {}<br>引入模块：inport 模块名称 from 地址<br>webpack准备</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install webpack</span><br><span class="line">cnpm install webpack-dev-server</span><br></pre></td></tr></table></figure>
+            <h2>简介：</h2>
+<p>vue-loader，来源于css-rouder、url-loader、html-loader...
+后台node.js--&gt;require exports等都是基于模块的开发
+broserify  较早的模块加载器，但是只能加载js
+webpack，模块加载器，一切东西皆模块，最后打包到一起
+vue-loader是基于webpack的  <strong>.vue文件</strong> 由vue-loader构成的，放置vue组件代码</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">// html</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">// css</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">// js  (普通js代码、ES6 需要通过babel-loader编译成ES5)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>目录结构
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|-idnex.html</span><br><span class="line">|-main.js            //入口文件</span><br><span class="line">|-App.vue            //vue文件</span><br><span class="line">|-packge.json        //工程文件（项目依赖，名称，配置）  用npm init --yes生成</span><br><span class="line">|-webpack.config.js  //webpack配置文件</span><br></pre></td></tr></table></figure></p>
+<p>ES6：模块化开发
+导出模块：export default {}
+引入模块：inport 模块名称 from 地址
+webpack准备</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm install webpack</span><br><span class="line">cnpm install webpack-dev-server</span><br></pre></td></tr></table></figure></p>
 <hr>
 <p>脚手架vue-cli</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 安装vue命令环境</span><br><span class="line">npm install vue-cli -g</span><br><span class="line">// 确认是否安装成功</span><br><span class="line">vue --version</span><br></pre></td></tr></table></figure>
-<p>选择脚手架<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 1. 安装simple,不推荐</span><br><span class="line">vue init simple 文件夹名</span><br><span class="line">// 2. 安装webpack(大型项目)  支持Eslint检查代码规范,单源测试</span><br><span class="line">vue init webpack 文件夹名</span><br><span class="line">// 3. 安装webpack-simple(推荐)</span><br><span class="line">vue init webpack-simple 文件夹名</span><br></pre></td></tr></table></figure></p>
-<p>配置依赖<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd 文件目录</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 安装vue命令环境</span><br><span class="line">npm install vue-cli -g</span><br><span class="line">// 确认是否安装成功</span><br><span class="line">vue --version</span><br></pre></td></tr></table></figure></p>
+<p>选择脚手架
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 1. 安装simple,不推荐</span><br><span class="line">vue init simple 文件夹名</span><br><span class="line">// 2. 安装webpack(大型项目)  支持Eslint检查代码规范,单源测试</span><br><span class="line">vue init webpack 文件夹名</span><br><span class="line">// 3. 安装webpack-simple(推荐)</span><br><span class="line">vue init webpack-simple 文件夹名</span><br></pre></td></tr></table></figure></p>
+<p>配置依赖
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd 文件目录</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
 <p>测试运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
-<p>安装vue-router<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// i -&gt;  install</span><br><span class="line">// D -&gt;  --save-dev</span><br><span class="line">// S -&gt;  --save</span><br><span class="line">npm install vue-router --save</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure></p>
+<p>安装vue-router
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// i -&gt;  install</span><br><span class="line">// D -&gt;  --save-dev</span><br><span class="line">// S -&gt;  --save</span><br><span class="line">npm install vue-router --save</span><br></pre></td></tr></table></figure></p>
 
         </div>
         <div class="post-tool">
