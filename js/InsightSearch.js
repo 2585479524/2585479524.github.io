@@ -9,7 +9,6 @@
  * @author PPOffice { @link https://github.com/ppoffice }
  */
 (function ($, CONFIG) {
-    console.log(CONFIG);
     
     var $main = $('.ins-search');
     var $input = $main.find('.ins-search-input');
