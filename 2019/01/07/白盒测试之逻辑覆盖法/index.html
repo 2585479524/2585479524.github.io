@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN">
+
+<head>
+    <!--[if lte IE 9]>
+<meta http-equiv="refresh" content="0;url=http://yoursite.com/warn.html">
+<![endif]-->
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://yoursite.com">
+<meta name="author" content="">
+<link rel="stylesheet" href="/css/SimpleStyle.min.css">
+
+<link rel="shortcut icon" href="/images/favicon.png">
+
+
+<title>白盒测试之逻辑覆盖法 - 无关--私人IT技术博客</title>
+
+<meta name="keywords" content="">
+
+<meta name="description " content="语句覆盖、条件覆盖、判定覆盖、条件-判定覆盖、组合覆盖、路径覆盖">
+
+</head>
+<body>
+<div id="nav">
+    <nav class="nav-menu">
+        <a class="site-name current" href="/" title="锐">锐</a>
+        <a class="site-index current" href="/"><i class="fa fa-home"></i><span>首页</span></a>
+        <a href="/archives" title="归档"><i class="fa fa-archives"></i><span>归档</span></a>
+        <a href="/tags" title="标签"><i class="fa fa-tags"></i><span>标签</span></a>
+        <!-- custom single page of menus -->
+        
+        
+        <a href="/help" title="帮助">
+            <i class="fa fa-question-circle"></i>
+            <span>帮助</span>
+        </a>
+        
+    </nav>
+</div>
+
+<div class="nav-user">
+    <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+    <a class="btn-read-mode" href="#"><i class="fa fa-sun-o"></i></a>
+    <a class="btn-sns-qr" href="javascript:"><i class="fa fa-telegram"></i></a>
+</div>
+
+<div id="wrapper" class="clearfix">
+    <div id="body">
+        <div class="main" id="main">
+            <div id="cover">
+    <div class="cover-img"></div>
+    <div class="cover-info">
+        
+        <h1 class="cover-siteName">n.xuanrui</h1>
+        <h3 class="cover-siteTitle">退无可退，一往无前</h3>
+        <p class="cover-siteDesc">做技术总是要辛苦些的</p>
+        <div class="cover-sns">
+            
+            <div class="btn btn-qq">
+                <a href="http://t.me/kunyintang" target="_blank" title="qq" ref="friend">
+                    <i class="fa fa-qq"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-weibo">
+                <a href="https://weibo.com/u/5213426541" target="_blank" title="weibo" ref="friend">
+                    <i class="fa fa-weibo"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-twitter">
+                <a href="https://twitter.com/xuanrui629" target="_blank" title="twitter" ref="friend">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            </div>
+            
+            <div class="btn btn-github">
+                <a href="https://github.com/2585479524" target="_blank" title="github" ref="friend">
+                    <i class="fa fa-github"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            <div class="page-title">
+    <ul>
+        <li><a href="/">最新</a></li>
+        
+            
+                <li class="">
+                    <a href="/categories/big-front-end" data-name="前端">前端</a>
+                </li>
+            
+                <li class="active">
+                    <a href="/categories/serverSide" data-name="后端">后端</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/unity" data-name="Unity">Unity</a>
+                </li>
+            
+                <li class="">
+                    <a href="/categories/resource" data-name="曾经沧海">曾经沧海</a>
+                </li>
+            
+        
+        <li class="page-search">
+    <!-- <form id="search" class="search-form">
+        <label for="s" class="sr-only">请输入关键字</label>
+        <input class="search-field" type="text" name="s" class="text" placeholder="请输入关键字" />
+        <button type="submit" class="search-form-submit" title="搜索"><i class="fa fa-search"></i></button>
+    </form> -->
+    <div class="ins-search">
+    <!-- <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div> -->
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+</li>
+
+    </ul>
+</div>
+<div class="main-inner">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="post-header">
+            <div class="post-author clearfix">
+                <a class="avatar fleft" href="" target="_blank">
+                    <img width="48" src="/images/favicon.png" alt="avatar"/>
+                </a>
+                <p><span class="label">作者</span>
+                    <a href="" target="_blank">xuanrui</a>
+                    <span title="最后编辑于2019-01-07">2019-01-07</span>
+                </p>
+                <p>会点前端的游戏开发者</p>
+            </div>
+            <h2 class="post-title">白盒测试之逻辑覆盖法</h2>
+            <div class="post-meta">
+                本文总共1980个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+            </div>
+        </div>
+        <div class="post-content markdown-body">
+            <p>最近在复习软件测试的考试，每次到白盒测试这里都要为这几种逻辑覆盖方法感到头疼，这次终于决定好好整理出来。</p>
+<p>逻辑覆盖是通过对程序逻辑结构的遍历实现程序的覆盖。它是一系列测试过程的总称，这组测试过程逐渐进行越来越完整的通路测试。
+根据覆盖目标的不同和覆盖源程序语句的详尽程度，逻辑覆盖又可分为：<strong>语句覆盖，判定覆盖，条件覆盖，条件/判定覆盖，条件组合覆盖，路径覆盖</strong></p>
+<p>这里以一个题目引入：</p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (a&gt;1) and (b = 0)</span><br><span class="line">then x = x / a</span><br><span class="line">if (a = 2) or (x &gt; 1)</span><br><span class="line">then x = x+ 1</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>根据以上程序段画出程序流程图</li>
+<li>按照要求给出六种逻辑覆盖的测试用例</li>
+</ol>
+<hr>
+<p>程序流程图如下：</p>
+<p><img src="/img/2019/%E7%99%BD%E7%9B%92%E6%B5%8B%E8%AF%95%E4%B9%8B%E9%80%BB%E8%BE%91%E8%A6%86%E7%9B%96%E6%B3%95/1.png" alt="这里写图片描述"></p>
+<h4>注：[可执行语句：流程图中的矩形;判定：流程图中的菱形]</h4>
+<h3>(一) 语句覆盖：选择足够多的测试用例，使程序中每一可执行语句至少执行一次</h3>
+<p>分析：需要覆盖的可执行语句为<strong>x = x / a</strong> 和 <strong>x = x + 1</strong></p>
+<p>测试用例如下：</p>
+<pre><code>a = 2, b = 0, x = 3   覆盖路径：a-c-e
+</code></pre>
+<h3>(二) 判定(分支)覆盖：选择足够多的测试用例，使程序中每个判定的&quot;真&quot;和&quot;假&quot;至少执行一次</h3>
+<p>分析：需要覆盖的路径为：<strong>a-c-e和a-b-d</strong>    或    <strong>a-b-e和a-c-d</strong></p>
+<p>测试用例如下：</p>
+<pre><code>答案1
+a = 2, b = 0, x = 3 覆盖路径：a-c-e
+a = 1, b = 0, x = 1 覆盖路径：a-b-d
+
+答案2
+a = 2, b = 1, x = 1 覆盖路径：a-b-e
+a = 3, b = 0, x = 3 覆盖路径：a-c-d
+</code></pre>
+<h3>(三) 条件覆盖：选择足够多的测试用例，使程序中每个判定的每个条件取得各种可能的结果</h3>
+<p>分析：需要满足的判定为：<strong>判定一(a &gt; 1, a &lt;= 1, b = 0, b != 0)</strong> ; <strong>判定二(a = 2, a != 2, x &gt; 1, x &lt;= 2)</strong></p>
+<p>测试用例如下：</p>
+<pre><code>答案1
+a = 2, b = 0, x = 3 取到a&gt;1(同时满足a=2), b = 0, x&gt;1
+a = 1, b = 1, x = 1 取到a &lt;= 1(同时满足a!=2), b != 0, x &lt;= 2
+
+答案2
+a = 1, b = 0, x = 3 取到a &lt;= 1(同时满足a!=2), b = 0, x &gt;1
+a = 2, b = 1, x = 1 取到a&gt;1(同时满足a=2), b != 0, x&lt;=2
+</code></pre>
+<h3>(四) 判定/条件覆盖：选择足够多的测试用例，使程序中每个判定的&quot;真&quot;和&quot;假&quot;至少执行一次，并且每个判定的每个条件取得各种可能的结果。</h3>
+<p>分析：</p>
+<ol>
+<li>
+<p>需要覆盖的路径为：<strong>a-c-e和a-b-d</strong>    或    <strong>a-b-e和a-c-d</strong></p>
+</li>
+<li>
+<p>需要满足的判定为：<strong>判定一(a &gt; 1, a &lt;= 1, b = 0, b != 0)</strong> ; <strong>判定二(a = 2, a != 2, x &gt; 1, x &lt;= 2)</strong></p>
+</li>
+</ol>
+<p>测试用例如下：</p>
+<pre><code>a = 2, b = 0, x = 3 覆盖路径a-c-e 取到a&gt;1(同时满足a=2), b = 0, x&gt;1
+a = 1, b = 1, x = 1 覆盖路径a-b-d 取到a &lt;= 1(同时满足a!=2), b != 0, x &lt;= 2
+</code></pre>
+<h3>(五) 条件组合覆盖：选择足够多的测试用例，使程序中所有判定的条件组合至少执行一次</h3>
+<p>分析：需要覆盖的条件组合为：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a &gt; 1, b = 0</span><br><span class="line">a&gt;1, b != 0</span><br><span class="line">a &lt;= 1, b = 0</span><br><span class="line">a &lt;= 1, b != 0</span><br><span class="line">a = 2, x &gt; 1</span><br><span class="line">a = 2, x&lt; = 1</span><br><span class="line">a != 2, x &gt; 1</span><br><span class="line">a != 2, x &lt;= 1</span><br></pre></td></tr></table></figure></p>
+<p>测试用例如下</p>
+<pre><code>a = 2, b = 0, x = 3 覆盖组合1，5
+a = 2, b = 1, x = 1 覆盖组合2，6
+a = 1, b = 0, x = 3 覆盖组合3，7
+a = 1, b = 1, x = 1 覆盖组合4，8
+</code></pre>
+<h3>(六) 路径覆盖：选择足够多的测试用例，使程序中每条路径至少执行一次</h3>
+<p>分析：需要覆盖的路径为：<strong>a-c-e、 a-b-d、 a-b-e、 a-c-d</strong></p>
+<pre><code>a = 2, b = 0, x = 3 覆盖路径：a-c-e
+a = 1, b = 0, x = 1 覆盖路径：a-b-d
+a = 2, b = 1, x = 1 覆盖路径：a-b-e
+a = 3, b = 0, x = 3 覆盖路径：a-c-d
+</code></pre>
+
+        </div>
+        <div class="post-tool">
+            <a class="btn-thumbs-up" href="javascript:void(0);" data-cid="52" title="95">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i> 打赏
+            </a>
+        </div>
+        
+        <div class="post-tags">标签：
+            
+            <a href="/tags/软件测试/">软件测试</a>
+            
+        </div>
+        
+    </article>
+    
+    <p>文章为原创作品，转载请留言！</p>
+    
+    
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2019/01/07/白盒测试之逻辑覆盖法/';
+        this.page.identifier = '2019/01/07/白盒测试之逻辑覆盖法/';
+    };
+    (function () { // DON'T EDIT BELOW THIS LINE
+        var d = document, disqus_shortname = '[object Object]', s = d.createElement('script');
+        s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+        Disqus.</a></noscript>
+
+</div>
+<script src="/js/busuanzi.pure.mini.js"></script>
+
+        </div><!-- end #main-->
+    </div><!-- end #body -->
+    <footer class="footer">
+    <div class="footer-inner">
+        <p>
+            <a href="/about"  title="关于本站">关于本站</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+            <!-- 自定义链接 -->
+            <a href="/links" title="友情链接">友情链接</a>&nbsp;&nbsp<em>·</em>&nbsp;&nbsp
+        </p>
+        <p>
+            本站点采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>，已建立<a href="/timeline" id="siteBuildingTime"></a>天<br/>
+            ©copyright 2018 REBRIGHT 鲁ICP备17050989号<br>
+            
+            基于<a href="http://hexo.io" target="_blank">Hexo</a>搭建
+            ，主题&nbsp<a href="https://github.com/tangkunyin/hexo-theme-jsimple" target="_blank">JSimple</a>
+            ，Hosted by <a href="https://github.com/2585479524" style="font-weight: bold">Coding Pages</a>
+            
+        </p>
+        
+
+    </div>
+</footer>
+<script src="/js/InsightSearch.js"></script>
+<script src="/js/SimpleCore.js"></script>
+
+</div>
+<div class="fixed-btn">
+    <a class="btn-gotop" href="javascript:"> <i class="fa fa-angle-up"></i></a>
+</div>
+<script>
+    $(function () {
+        SimpleCore.init({
+            buildingTime: '01/26/2018',
+            current: $('.post-tags').length > 0 ? 'post' : 'archive',
+            snsQRCode: '/images/sns-qrcode.png',
+            donateImg: '/images/donate-qr.png',
+        });
+    });
+</script>
+</body>
+</html>

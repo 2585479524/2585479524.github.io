@@ -17,7 +17,7 @@
 <link rel="shortcut icon" href="/images/favicon.png">
 
 
-<title>标签云 - 无关--私人IT技术博客</title>
+<title>无关--私人IT技术博客 - </title>
 
 <meta name="keywords" content="">
 
@@ -89,8 +89,26 @@
 </div>
             <div class="page-title">
     <ul>
-        <li><a href="/" data-name="首页" title="Back Home">首页</a></li>
-        <li><a href="/archives" data-name="归档" title="归档">归档</a></li>
+        <li class="active">
+            <a href="/" data-name="最近文章">最近</a>
+        </li>
+        
+        <li class="">
+            <a href="/categories/big-front-end" data-name="前端">前端</a>
+        </li>
+        
+        <li class="">
+            <a href="/categories/serverSide" data-name="后端">后端</a>
+        </li>
+        
+        <li class="">
+            <a href="/categories/unity" data-name="Unity">Unity</a>
+        </li>
+        
+        <li class="">
+            <a href="/categories/resource" data-name="曾经沧海">曾经沧海</a>
+        </li>
+        
         <li class="page-search">
     <!-- <form id="search" class="search-form">
         <label for="s" class="sr-only">请输入关键字</label>
@@ -130,53 +148,51 @@
     </ul>
 </div>
 <div class="main-inner">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-        <div class="post-header">
-            <h3 class="post-title">本博客 - 目前共计18类标签</h3>
+    
+    <!-- 首页默认取最最新文章集 -->
+    
+    
+<article class="post">
+    
+    <!-- 有配图默认渲染第一张 -->
+    <div class="post-cover">
+        <a href="/2018/05/02/vueSimpleMessageBoard/" target="_blank" title="Vue入门(一)----简易留言板"
+           style="background-image:url(/img/LOGO/vue.png)"></a>
+    </div>
+    
+    <div class="post-header">
+        <div class="post-meta">
+            <a href="" target="_blank">
+                <strong>牧</strong>
+            </a>
+            <em>·</em>2018-05-02
         </div>
-        <div class="post-content markdown-body" itemprop="articleBody">
-            <ul class="tag-list">
-                
-                <li><a href="/tags/C语言/">C语言(9)</a></li>
-                
-                <li><a href="/tags/JAVA/">JAVA(2)</a></li>
-                
-                <li><a href="/tags/PHP/">PHP(3)</a></li>
-                
-                <li><a href="/tags/flex/">flex(1)</a></li>
-                
-                <li><a href="/tags/git/">git(2)</a></li>
-                
-                <li><a href="/tags/hexo/">hexo(3)</a></li>
-                
-                <li><a href="/tags/unity/">unity(1)</a></li>
-                
-                <li><a href="/tags/vscode/">vscode(2)</a></li>
-                
-                <li><a href="/tags/vue/">vue(13)</a></li>
-                
-                <li><a href="/tags/刷题/">刷题(5)</a></li>
-                
-                <li><a href="/tags/big-front-end/">前端(1)</a></li>
-                
-                <li><a href="/tags/四级网络工程师/">四级网络工程师(4)</a></li>
-                
-                <li><a href="/tags/resource/">曾经沧海(5)</a></li>
-                
-                <li><a href="/tags/移动端/">移动端(1)</a></li>
-                
-                <li><a href="/tags/算法思想/">算法思想(34)</a></li>
-                
-                <li><a href="/tags/蓝桥杯/">蓝桥杯(13)</a></li>
-                
-                <li><a href="/tags/软件测试/">软件测试(1)</a></li>
-                
-                <li><a href="/tags/阿里云服务器/">阿里云服务器(1)</a></li>
-                
-            </ul>
+        <a class="post-title" href="/2018/05/02/vueSimpleMessageBoard/" target="_blank" title="Vue入门(一)----简易留言板">Vue入门(一)----简易留言板</a>
+        <div class="post-meta">
+            <a href="/tags" target="_blank"><i class="fa fa-tags"></i></a>
+            
+                <em>·</em>
+                <a href="http://yoursite.com/tags/vue/" target="_blank">vue</a>
+            
         </div>
-    </article>
-</div><!-- end #main-->
+    </div>
+    <div class="post-desc">
+        vue学习之旅
+    </div>
+</article>
+
+
+
+    
+    
+</div>
+<!-- 分页开始 -->
+
+<div id="btn-pager">
+    
+    <a class="extend prev" rel="prev" href="/page/10/">上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span>
+</div>
+
 
         </div><!-- end #main-->
     </div><!-- end #body -->
