@@ -162,56 +162,53 @@
             </div>
             <h2 class="post-title">JAVA刷题方法整理</h2>
             <div class="post-meta">
-                本文总共3166个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
+                本文总共3161个字 | 您是第<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>位看到它们的小伙伴
             </div>
         </div>
         <div class="post-content markdown-body">
             <h2>JAVA刷题方法整理</h2>
-<p><strong>一、String---&gt;String[]</strong></p>
+<h3>一、String---&gt;String[]</h3>
 <p>利用String.split()实现
 注：在使用String.split 方法分隔字符串时，分隔符如果用到一些特殊字符，可能会得不到我们预期的结果，
 &lt;pre&gt;例如 |，<em>，+等，需要变为 \|，\</em>，\+才可以。&lt;/pre&gt;</p>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = new String(&quot;abcedfg&quot;);</span><br><span class="line">   String[] arr = str.split(&quot;&quot;);</span><br></pre></td></tr></table></figure></p>
 <p>利用String.toCharArray()实现
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = new String(&quot;abcedfghig&quot;);</span><br><span class="line">char[] chr  = str.toCharArray();</span><br></pre></td></tr></table></figure></p>
-<p><strong>二、String[] ---&gt; String</strong></p>
-<p>借助StringBuffer类的append()，String本身不具备此方法
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String[] str = new String[]&#123;&quot;abc&quot;,&quot;123&quot;,&quot;78&quot;&#125;;</span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line"></span><br><span class="line">        for(int i = 0;i&lt;str.length;i++)&#123;</span><br><span class="line">            sb.append(str[i]);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>三、char[] ---&gt; String</strong></p>
-<p>通过char.toString()
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char[] chr = new char[]&#123;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;&#125;;</span><br><span class="line">   chr.toString();</span><br></pre></td></tr></table></figure></p>
-<p>通过String.valueOf()
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">char[] chr = new char[]&#123;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;&#125;;</span><br><span class="line">        String.valueOf(chr);</span><br></pre></td></tr></table></figure></p>
-<p><strong>四、处理末位带空格的情况</strong></p>
+<h3>二、String[] ---&gt; String</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">借助StringBuffer类的append()，String本身不具备此方法</span><br><span class="line">String[] str = new String[]&#123;&quot;abc&quot;,&quot;123&quot;,&quot;78&quot;&#125;;</span><br><span class="line">        StringBuffer sb = new StringBuffer();</span><br><span class="line"></span><br><span class="line">        for(int i = 0;i&lt;str.length;i++)&#123;</span><br><span class="line">            sb.append(str[i]);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
+<h3>三、char[] ---&gt; String</h3>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   通过char.toString()</span><br><span class="line">char[] chr = new char[]&#123;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;&#125;;</span><br><span class="line">   chr.toString();</span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">通过String.valueOf()</span><br><span class="line">char[] chr = new char[]&#123;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;&#125;;</span><br><span class="line">String.valueOf(chr);</span><br></pre></td></tr></table></figure></p>
+<h3>四、处理末位带空格的情况</h3>
 <p>针对末位带空格，通过StringBuffer或者StringBuilder来实现存储，并能够进行多次修改
 通过StringBuffer实例.substring(0,StringBuffer实例.length()-1)实现将末位空格去除，再统一输出</p>
-<p><strong>五、其他类型转String</strong>
-直接调用String.valueOf()进行转换
+<h3>五、其他类型转String</h3>
+<p>直接调用String.valueOf()进行转换
 也使用可以使用int+&quot;&quot;；转成字符串
 通过String.chatAt()获取下标元素
 通过String.substring()截取i之后的元素
 通过String.split(&quot;&quot;)分隔字符串得到数组</p>
-<p><strong>六、String---&gt;int</strong>
-String a = Integer.valueOf(b);
+<h3>六、String---&gt;int</h3>
+<p>String a = Integer.valueOf(b);
 String a = Integer.ParseInt(b);</p>
-<p><strong>七、char--&gt;String</strong>
-String str = String.valueOf(char)
-八、自定义排序</p>
+<h3>七、char--&gt;String</h3>
+<p>String str = String.valueOf(char)</p>
+<h3>八、自定义排序</h3>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(point,0, n, new Comparator&lt;Point&gt;() &#123;</span><br><span class="line">    @Override</span><br><span class="line">    public int compare(Point o1, Point o2) &#123;</span><br><span class="line">        if (o1.x - o2.x == 0) &#123;</span><br><span class="line">            return (int) (o1.y - o2.y);</span><br><span class="line">        &#125;</span><br><span class="line">        return (int) (o1.x - o2.x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><strong>九、for each 输出</strong></p>
+<h3>九、for each 输出</h3>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (Point i:point</span><br><span class="line">        ) &#123;</span><br><span class="line">       System.out.println(i.x + &quot;,&quot; + i.y);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>十、大数阶乘</strong></p>
+<h3>十、大数阶乘</h3>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import java.math.BigInteger;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">public class Main&#123;</span><br><span class="line">    public static void main(String[] args) &#123;     </span><br><span class="line">    Scanner inputScanner=new Scanner(System.in);</span><br><span class="line">       while(inputScanner.hasNext())</span><br><span class="line">       &#123;</span><br><span class="line">           int n=inputScanner.nextInt();</span><br><span class="line">           BigInteger m;</span><br><span class="line">           m=BigInteger.valueOf(1);//将m定义成大数的1</span><br><span class="line">           for(int i=1;i&lt;=n;i++)</span><br><span class="line">           &#123;</span><br><span class="line">               m=m.multiply(BigInteger.valueOf(i));//大数乘法</span><br><span class="line">           &#125;</span><br><span class="line">           System.out.println(m);</span><br><span class="line">       &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><strong>十一、大数加、减、乘、除、取余</strong></p>
+<h3>十一、大数加、减、乘、除、取余</h3>
 <p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//定义：</span><br><span class="line">BigDemical bg = new BigDemical(int)</span><br><span class="line">BigDemical bg = new BigDemical(String)</span><br><span class="line">//加：</span><br><span class="line">jia = bg.add(new BigDemical(1))</span><br><span class="line">//减：</span><br><span class="line">jian = bg.subtract(new BigDemical(1))</span><br><span class="line">//乘：</span><br><span class="line">cheng = bg.multiply(new BigDemical(1))</span><br><span class="line">//除：</span><br><span class="line">chu = bg.divide(new BigDemical(1))</span><br><span class="line">//取余</span><br><span class="line">yu = bg.divideAndRemainder(new BigDemical(2))</span><br><span class="line">//返回一个数组：商yu[0] 余数yu[1]</span><br></pre></td></tr></table></figure></p>
-<p><strong>十二、Java Character 类</strong>
-Character 类用于对单个字符进行操作。
-Character 类在对象中包装一个基本类型 char 的值
-<strong>十三、模运算</strong>
-a&amp;1 等价于 a%2 == 0
-a&gt;&gt;=1 等价于 a/=2
-<strong>十四、next()与nextLine()</strong>
-next()一定要读取到有效字符后才可以结束输入，对输入有效字符之前遇到的空格键、Tab键或Enter键等结束符，next()方法会自动将其去掉，只有在输入有效字符之后，next()方法会将输入的空格键、Tab键或Enter键等视为分隔符或结束符，所以next方法不能得到带空格的字符串。
+<h3>十二、Java Character 类</h3>
+<p>Character 类用于对单个字符进行操作。
+Character 类在对象中包装一个基本类型 char 的值</p>
+<h3>十三、模运算</h3>
+<p>a&amp;1 等价于 a%2 == 0
+a&gt;&gt;=1 等价于 a/=2</p>
+<h3>十四、next()与nextLine()</h3>
+<p>next()一定要读取到有效字符后才可以结束输入，对输入有效字符之前遇到的空格键、Tab键或Enter键等结束符，next()方法会自动将其去掉，只有在输入有效字符之后，next()方法会将输入的空格键、Tab键或Enter键等视为分隔符或结束符，所以next方法不能得到带空格的字符串。
 而nextLine()方法的结束符只是Enter键，即nextLine()方法返回的是Enter键之前的所有字符，它是可以得到带空格的字符串的。
 要注意的是在每一个 next()、nextDouble() 、 nextFloat()、nextInt() 等语句之后如果还有一个nextLine()，需要再加一个nextLine()语句，将next()之后Enter结束符过滤掉，否则nextLine()会读取到Enter，而不能继续读取数据。</p>
 
